@@ -2,3 +2,4 @@ name: Werewolf
 version: ${project.version}
 main: net.kunmc.lab.werewolf.Werewolf
 api-version: 1.16
+
