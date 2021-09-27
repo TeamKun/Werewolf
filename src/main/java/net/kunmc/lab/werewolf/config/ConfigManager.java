@@ -1,11 +1,8 @@
 package net.kunmc.lab.werewolf.config;
 
 import net.kunmc.lab.werewolf.Werewolf;
-import net.kunmc.lab.werewolf.role.Roles;
+import net.kunmc.lab.werewolf.player.role.Roles;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.entity.Player;
-
-import java.util.List;
 
 public class ConfigManager {
     /** コンフィグオブジェクト */

@@ -8,7 +8,6 @@ import net.kunmc.lab.werewolf.config.ConfigManager;
 public class Show extends Command {
     public Show() {
         super(CommandNameConst.COMMAND_SHOW);
-
     }
 
     @Override
