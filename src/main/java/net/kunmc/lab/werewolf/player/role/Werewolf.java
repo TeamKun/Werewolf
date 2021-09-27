@@ -5,12 +5,21 @@ import net.kunmc.lab.werewolf.player.role.Roles;
 
 import java.util.UUID;
 
-public class Werewolf implements WWPlayer {
+public class Werewolf implements WWPlayer, RoleBuilder {
     final Roles role = Roles.WEREWOLF;
     private UUID uuid;
 
-    public Werewolf(UUID uuid) {
+    private Werewolf(UUID uuid) {
         this.uuid = uuid;
+    }
+
+    Werewolf() {}
+
+    public WWPlayer instance(UUID uuid) {
+        return new Werewolf(uuid);
+    }
+    public UUID uuid() {
+        return this.uuid;
     }
 
     public String roleName() {

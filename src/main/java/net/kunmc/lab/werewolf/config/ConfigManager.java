@@ -4,6 +4,10 @@ import net.kunmc.lab.werewolf.Werewolf;
 import net.kunmc.lab.werewolf.player.role.Roles;
 import org.bukkit.configuration.file.FileConfiguration;
 
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
+
 public class ConfigManager {
     /** コンフィグオブジェクト */
     static FileConfiguration config;
@@ -41,18 +45,43 @@ public class ConfigManager {
      * config show に表示する文字列を取得する
      * */
     public static StringBuilder showConfig() {
+        List<RoleConfig> list = roleConfigList();
         StringBuilder msg = new StringBuilder();
         msg.append("◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇現在の設定◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇\n");
         msg.append("--人数\n");
-        msg.append(Roles.WEREWOLF.jName() + ": " + werewolf.people() + "人\n");
-        msg.append(Roles.SEER.jName() + ": " + seer.people() + "人\n");
-        msg.append(Roles.MEDIUM.jName() + ": " + medium.people() + "人\n");
-        msg.append(Roles.MADMAN.jName() + ": " + madman.people() + "人\n");
+        list.forEach(roleConfig -> {
+            msg.append(roleConfig.role().jName() + ": " + roleConfig.people() + "人\n");
+        });
         msg.append("--能力の使用回数\n");
-        msg.append(Roles.SEER.jName() + ": " + seer.ability() + "回\n");
-        msg.append(Roles.MEDIUM.jName() + ": " + medium.ability() + "回\n");
+        list.forEach(roleConfig -> {
+            if (roleConfig.role().haveAbility()) {
+                msg.append(roleConfig.role().jName() + ": " + roleConfig.ability() + "回\n");
+            }
+        });
         msg.append("◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇現在の設定◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇\n");
 
         return msg;
+    }
+
+    /**
+     * 役職設定をリストにして返す
+     * */
+    public static List<RoleConfig> roleConfigList() {
+        try {
+            List<RoleConfig> list = new ArrayList<>();
+            for (Field field : ConfigManager.class.getDeclaredFields()) {
+                Object value = field.get(null);
+
+                if (!(value instanceof RoleConfig)) {
+                    continue;
+                }
+
+                list.add((RoleConfig) value);
+            }
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

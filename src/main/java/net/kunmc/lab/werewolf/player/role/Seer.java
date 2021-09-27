@@ -5,12 +5,22 @@ import net.kunmc.lab.werewolf.player.role.Roles;
 
 import java.util.UUID;
 
-public class Seer implements WWPlayer {
+public class Seer implements WWPlayer, RoleBuilder {
     final Roles role = Roles.SEER;
     private UUID uuid;
 
-    public Seer(UUID uuid) {
+    private Seer(UUID uuid) {
         this.uuid = uuid;
+    }
+
+    Seer() {}
+
+    public WWPlayer instance(UUID uuid) {
+        return new Seer(uuid);
+    }
+
+    public UUID uuid() {
+        return this.uuid;
     }
 
     public String roleName() {

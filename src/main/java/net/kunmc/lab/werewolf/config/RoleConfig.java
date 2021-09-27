@@ -20,6 +20,7 @@ public class RoleConfig {
         this.people = value;
     }
 
+
     void setAbility(int value) {
         if (this.role.numberOfAbilitiesMin() > value) {
             value = this.role.numberOfPeopleMin();
@@ -27,11 +28,13 @@ public class RoleConfig {
         this.ability = value;
     }
 
-    int people() {
+    public Roles role() {
+        return this.role;
+    }
+    public int people() {
         return this.people;
     }
-
-    int ability() {
+    public int ability() {
         return this.ability;
     }
 }
