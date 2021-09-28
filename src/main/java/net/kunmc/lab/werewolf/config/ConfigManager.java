@@ -50,12 +50,12 @@ public class ConfigManager {
         msg.append("◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇現在の設定◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇\n");
         msg.append("--人数\n");
         list.forEach(roleConfig -> {
-            msg.append(roleConfig.role().jName() + ": " + roleConfig.people() + "人\n");
+            msg.append(roleConfig.role().jName + ": " + roleConfig.people() + "人\n");
         });
         msg.append("--能力の使用回数\n");
         list.forEach(roleConfig -> {
-            if (roleConfig.role().haveAbility()) {
-                msg.append(roleConfig.role().jName() + ": " + roleConfig.ability() + "回\n");
+            if (roleConfig.role().haveAbility) {
+                msg.append(roleConfig.role().jName + ": " + roleConfig.ability() + "回\n");
             }
         });
         msg.append("◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇現在の設定◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇\n");

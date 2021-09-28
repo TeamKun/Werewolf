@@ -14,16 +14,16 @@ public class RoleConfig {
     }
 
     void setPeople(int value) {
-        if (this.role.numberOfPeopleMin() > value) {
-            value = this.role.numberOfPeopleMin();
+        if (this.role.numberOfPeopleMin > value) {
+            value = this.role.numberOfPeopleMin;
         }
         this.people = value;
     }
 
 
     void setAbility(int value) {
-        if (this.role.numberOfAbilitiesMin() > value) {
-            value = this.role.numberOfPeopleMin();
+        if (this.role.numberOfAbilitiesMin > value) {
+            value = this.role.numberOfPeopleMin;
         }
         this.ability = value;
     }

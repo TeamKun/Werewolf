@@ -3,13 +3,14 @@ package net.kunmc.lab.werewolf.player;
 import net.kunmc.lab.werewolf.config.ConfigManager;
 import net.kunmc.lab.werewolf.config.RoleConfig;
 import net.kunmc.lab.werewolf.player.role.Roles;
+import net.kunmc.lab.werewolf.player.role.Teams;
 import org.bukkit.entity.Player;
 
 import java.util.*;
 
-public class WWPlayerList {
+public class ActorList {
     private Set<UUID> playerSet = new HashSet<>();
-    private Set<WWPlayer> actors = new HashSet<>();
+    private Set<Actor> actors = new HashSet<>();
 
     /**
      * プレイヤーを追加する
@@ -26,10 +27,25 @@ public class WWPlayerList {
     }
 
     /**
+     * プレイヤーが死亡したときの処理
+     * */
+    public boolean death(UUID uuid) {
+        for (Actor actor : actors) {
+            if (actor.uuid().equals(uuid)) {
+                actor.death();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
      * 配役する
      * */
     public boolean setRole() {
         List<RoleConfig> configList = ConfigManager.roleConfigList();
+        // 配役をクリア
+        actors.clear();
 
         // 人数チェック
         int minPlayer = 0;
@@ -54,5 +70,34 @@ public class WWPlayerList {
         }
 
         return true;
+    }
+
+    /**
+     * 勝利した陣営を取得する
+     * */
+    public Teams winnerTeam() {
+        int humanTeamCount = 0;
+        int werewolfTeamCount = 0;
+        for (Actor actor : this.actors) {
+            if (actor.team().equals(Teams.HUMAN)) {
+                humanTeamCount ++;
+            }
+
+            if (actor.team().equals(Teams.WEREWOLF)) {
+                werewolfTeamCount ++;
+            }
+        }
+
+        // 人間が0の時
+        if (humanTeamCount == 0) {
+            return Teams.WEREWOLF;
+        }
+
+        // 人狼が0の時
+        if (werewolfTeamCount == 0) {
+            return Teams.HUMAN;
+        }
+
+        return null;
     }
 }

@@ -1,13 +1,13 @@
 package net.kunmc.lab.werewolf.player.role;
 
-import net.kunmc.lab.werewolf.player.WWPlayer;
-import net.kunmc.lab.werewolf.player.role.Roles;
+import net.kunmc.lab.werewolf.player.Actor;
 
 import java.util.UUID;
 
-public class Werewolf implements WWPlayer, RoleBuilder {
+public class Werewolf implements Actor, RoleBuilder {
     final Roles role = Roles.WEREWOLF;
     private UUID uuid;
+    private boolean isDead = false;
 
     private Werewolf(UUID uuid) {
         this.uuid = uuid;
@@ -15,7 +15,7 @@ public class Werewolf implements WWPlayer, RoleBuilder {
 
     Werewolf() {}
 
-    public WWPlayer instance(UUID uuid) {
+    public Actor instance(UUID uuid) {
         return new Werewolf(uuid);
     }
     public UUID uuid() {
@@ -23,10 +23,22 @@ public class Werewolf implements WWPlayer, RoleBuilder {
     }
 
     public String roleName() {
-        return role.jName();
+        return role.jName;
     }
 
     public boolean isInhuman() {
-        return role.isInhuman();
+        return role.isInhuman;
+    }
+
+    public void death() {
+        this.isDead = true;
+    }
+
+    public boolean isDead() {
+        return this.isDead;
+    }
+
+    public Teams team() {
+        return role.team;
     }
 }

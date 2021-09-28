@@ -6,5 +6,6 @@ import net.kunmc.lab.werewolf.command.CommandNameConst;
 public class Pmadman extends Command {
     public Pmadman() {
         super(CommandNameConst.COMMAND_MADMAN);
+
     }
 }
