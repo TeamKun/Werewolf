@@ -15,6 +15,7 @@ public class AddPlayer extends Command {
             usageBuilder.entityArgument("selector");
         });
     }
+
     @Override
     public void execute(CommandContext ctx) {
         try {

@@ -1,6 +1,7 @@
 package net.kunmc.lab.werewolf;
 
 import dev.kotx.flylib.FlyLib;
+import net.kunmc.lab.werewolf.command.Fortune;
 import net.kunmc.lab.werewolf.command.Main;
 import net.kunmc.lab.werewolf.config.ConfigManager;
 import net.kunmc.lab.werewolf.game.Listener;
@@ -18,6 +19,7 @@ public final class Werewolf extends JavaPlugin {
         // コマンド読み込み
         FlyLib.create(this, builder -> {
             builder.command(new Main());
+            builder.command(new Fortune());
         });
 
         // イベント読み込み

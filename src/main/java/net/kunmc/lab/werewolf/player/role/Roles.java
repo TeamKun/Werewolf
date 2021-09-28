@@ -4,7 +4,6 @@ import net.kunmc.lab.werewolf.player.Actor;
 import net.kunmc.lab.werewolf.util.DecorationConst;
 import net.kyori.adventure.text.Component;
 
-import java.awt.*;
 import java.util.UUID;
 
 public enum Roles {

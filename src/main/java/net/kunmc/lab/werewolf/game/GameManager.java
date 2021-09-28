@@ -1,12 +1,18 @@
 package net.kunmc.lab.werewolf.game;
 
+import net.kunmc.lab.werewolf.command.CommandResult;
+import net.kunmc.lab.werewolf.player.Actor;
 import net.kunmc.lab.werewolf.player.ActorList;
+import net.kunmc.lab.werewolf.player.role.Roles;
 import net.kunmc.lab.werewolf.player.role.Teams;
 import net.kunmc.lab.werewolf.util.DecorationConst;
 import net.kunmc.lab.werewolf.util.MessageUtil;
+import org.bukkit.Bukkit;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
+import javax.management.relation.Role;
 import java.util.UUID;
 
 public class GameManager implements Listener {
@@ -77,5 +83,33 @@ public class GameManager implements Listener {
      * */
     public static Teams winnerTeam() {
         return actorList.winnerTeam();
+    }
+
+    /**
+     * 能力を使用する
+     * */
+    public static CommandResult useAbilities(CommandSender sender, Roles role, Object args) {
+
+        if (!isRunning) {
+            return new CommandResult(false, "このコマンドは人狼ゲーム進行中のみ使用できます");
+        }
+
+        Player user = Bukkit.getPlayer(sender.getName());
+        if (user == null) {
+            return new CommandResult(false, "このコマンドはプレイヤーのみが使用できます");
+        }
+
+        Actor actor = actorList.getActor(user.getUniqueId());
+
+        if (actor == null) {
+            return new CommandResult(false, "このコマンドは人狼ゲーム参加者のみが使用できます");
+        }
+
+        if (actor.isDead()) {
+            return new CommandResult(false, "あなたはすでに死亡しています");
+        }
+
+        // 能力を使用
+        return actor.useAbilities(role, args);
     }
 }

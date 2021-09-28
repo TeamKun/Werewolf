@@ -1,7 +1,7 @@
 package net.kunmc.lab.werewolf.player.role;
 
+import net.kunmc.lab.werewolf.command.CommandResult;
 import net.kunmc.lab.werewolf.player.Actor;
-import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
@@ -48,5 +48,9 @@ public class Citizen implements Actor,RoleBuilder {
     public void showActionBar() {
         Player player = Bukkit.getPlayer(this.uuid);
         player.sendActionBar(this.role.actionBarMessage());
+    }
+
+    public CommandResult useAbilities(Roles role, Object arg) {
+        return new CommandResult(false, "あなたはこの能力を使用できません");
     }
 }
