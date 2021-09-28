@@ -1,10 +1,12 @@
 package net.kunmc.lab.werewolf.player;
 
+import net.kunmc.lab.werewolf.command.CommandResult;
 import net.kunmc.lab.werewolf.config.ConfigManager;
 import net.kunmc.lab.werewolf.config.RoleConfig;
 import net.kunmc.lab.werewolf.player.role.Roles;
 import net.kunmc.lab.werewolf.player.role.Teams;
-import net.kunmc.lab.werewolf.util.MessageUtil;
+import org.bukkit.Bukkit;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import java.util.*;
@@ -59,18 +61,22 @@ public class ActorList {
 
         List<UUID> playerList = new ArrayList<>(playerSet);
 
+        Set<UUID> tmpSet = new HashSet<>();
         // 配役処理
         Collections.shuffle(playerList);
-        int playerCount = 0;
         for (RoleConfig roleConfig : configList) {
             for (int i = 0; i < roleConfig.people(); i++) {
-                actors.add(roleConfig.role().instance(playerList.remove(playerCount)));
-                playerCount ++;
+                UUID uuid = playerList.remove(0);
+                actors.add(roleConfig.role().instance(uuid));
+                tmpSet.add(uuid);
             }
         }
         for (UUID uuid : playerList) {
+            tmpSet.add(uuid);
             actors.add(Roles.CITIZEN.instance(uuid));
         }
+
+        this.playerSet = tmpSet;
 
         return true;
     }
@@ -111,5 +117,18 @@ public class ActorList {
         actors.forEach(actor -> {
             actor.showActionBar();
         });
+    }
+
+    /**
+     * UUIDから参加者を取得する
+     * */
+    public Actor getActor(UUID uuid) {
+        for (Actor actor : actors) {
+            if (actor.uuid().equals(uuid)) {
+                return actor;
+            }
+        }
+
+        return null;
     }
 }
