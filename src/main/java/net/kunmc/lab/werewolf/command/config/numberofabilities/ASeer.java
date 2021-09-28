@@ -5,7 +5,7 @@ import dev.kotx.flylib.command.CommandContext;
 import net.kunmc.lab.werewolf.command.CommandNameConst;
 import net.kunmc.lab.werewolf.config.ConfigManager;
 import net.kunmc.lab.werewolf.config.ConfigPathConst;
-import net.kunmc.lab.werewolf.player.role.Roles;
+import net.kunmc.lab.werewolf.player.Roles;
 import org.jetbrains.annotations.NotNull;
 
 public class ASeer extends Command {

@@ -1,13 +1,13 @@
-package net.kunmc.lab.werewolf.player.role;
+package net.kunmc.lab.werewolf.player;
 
-import net.kunmc.lab.werewolf.player.Actor;
+import net.kunmc.lab.werewolf.player.role.*;
 import net.kunmc.lab.werewolf.util.DecorationConst;
 import net.kyori.adventure.text.Component;
 
 import java.util.UUID;
 
 public enum Roles {
-    CITIZEN("市民",Teams.HUMAN, new Citizen(),0,0, false, false, "特殊能力なし"),
+    CITIZEN("市民", Teams.HUMAN, new Citizen(),0,0, false, false, "特殊能力なし"),
     WEREWOLF("人狼",Teams.WEREWOLF, new Werewolf(), 1,0, true, false, "/wc <text> - 人狼チャット"),
     SEER("預言者",Teams.HUMAN, new Seer(),0,1, false, true, "/f <player> - 対象を占う"),
     MEDIUM("霊媒師",Teams.HUMAN, new Medium(),0,1, false,true, "/sp <player> - 対象を占う"),

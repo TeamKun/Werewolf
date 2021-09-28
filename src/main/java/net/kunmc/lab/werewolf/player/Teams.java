@@ -1,4 +1,4 @@
-package net.kunmc.lab.werewolf.player.role;
+package net.kunmc.lab.werewolf.player;
 /**
  * 勝利条件の判定に使用する値の為狂人は人間陣営とする
  * */

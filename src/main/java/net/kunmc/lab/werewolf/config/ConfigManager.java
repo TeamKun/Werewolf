@@ -1,7 +1,7 @@
 package net.kunmc.lab.werewolf.config;
 
 import net.kunmc.lab.werewolf.Werewolf;
-import net.kunmc.lab.werewolf.player.role.Roles;
+import net.kunmc.lab.werewolf.player.Roles;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import java.lang.reflect.Field;

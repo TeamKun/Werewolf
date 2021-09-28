@@ -3,8 +3,8 @@ package net.kunmc.lab.werewolf.game;
 import net.kunmc.lab.werewolf.command.CommandResult;
 import net.kunmc.lab.werewolf.player.Actor;
 import net.kunmc.lab.werewolf.player.ActorList;
-import net.kunmc.lab.werewolf.player.role.Roles;
-import net.kunmc.lab.werewolf.player.role.Teams;
+import net.kunmc.lab.werewolf.player.Roles;
+import net.kunmc.lab.werewolf.player.Teams;
 import net.kunmc.lab.werewolf.util.DecorationConst;
 import net.kunmc.lab.werewolf.util.MessageUtil;
 import org.bukkit.Bukkit;
@@ -12,7 +12,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import javax.management.relation.Role;
 import java.util.UUID;
 
 public class GameManager implements Listener {

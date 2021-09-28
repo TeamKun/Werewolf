@@ -1,6 +1,6 @@
 package net.kunmc.lab.werewolf.config;
 
-import net.kunmc.lab.werewolf.player.role.Roles;
+import net.kunmc.lab.werewolf.player.Roles;
 
 public class RoleConfig {
     private Roles role;

@@ -1,12 +1,7 @@
 package net.kunmc.lab.werewolf.player;
 
-import net.kunmc.lab.werewolf.command.CommandResult;
 import net.kunmc.lab.werewolf.config.ConfigManager;
 import net.kunmc.lab.werewolf.config.RoleConfig;
-import net.kunmc.lab.werewolf.player.role.Roles;
-import net.kunmc.lab.werewolf.player.role.Teams;
-import org.bukkit.Bukkit;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import java.util.*;
