@@ -35,7 +35,7 @@ public class ConfigManager {
     /**
      * コンフィグをセットする
      * */
-    private static void setConfig(String path, Object value) {
+    public static void setConfig(String path, Object value) {
         config.set(path, value);
         Werewolf.plugin.saveConfig();
         loadConfig();

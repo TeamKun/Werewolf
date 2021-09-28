@@ -13,7 +13,7 @@ public enum Roles {
 
     public String jName;
     public Teams team;
-    public RoleBuilder builder;
+    private RoleBuilder builder;
     public int numberOfPeopleMin;
     public int numberOfAbilitiesMin;
     public boolean isInhuman;
@@ -32,4 +32,19 @@ public enum Roles {
     public Actor instance(UUID uuid) {
         return builder.instance(uuid);
     }
+
+    public int numberOfPeople(int value) {
+        if (this.numberOfPeopleMin > value) {
+            return this.numberOfPeopleMin;
+        }
+        return value;
+    }
+
+    public int numberOfAbilities(int value) {
+        if (this.numberOfAbilitiesMin > value) {
+            return this.numberOfAbilitiesMin;
+        }
+        return value;
+    }
+
 }
