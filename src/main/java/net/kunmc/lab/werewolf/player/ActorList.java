@@ -4,6 +4,7 @@ import net.kunmc.lab.werewolf.config.ConfigManager;
 import net.kunmc.lab.werewolf.config.RoleConfig;
 import net.kunmc.lab.werewolf.player.role.Roles;
 import net.kunmc.lab.werewolf.player.role.Teams;
+import net.kunmc.lab.werewolf.util.MessageUtil;
 import org.bukkit.entity.Player;
 
 import java.util.*;
@@ -60,9 +61,11 @@ public class ActorList {
 
         // 配役処理
         Collections.shuffle(playerList);
+        int playerCount = 0;
         for (RoleConfig roleConfig : configList) {
             for (int i = 0; i < roleConfig.people(); i++) {
-                actors.add(roleConfig.role().instance(playerList.remove(0)));
+                actors.add(roleConfig.role().instance(playerList.remove(playerCount)));
+                playerCount ++;
             }
         }
         for (UUID uuid : playerList) {
@@ -79,11 +82,11 @@ public class ActorList {
         int humanTeamCount = 0;
         int werewolfTeamCount = 0;
         for (Actor actor : this.actors) {
-            if (actor.team().equals(Teams.HUMAN)) {
+            if (actor.team().equals(Teams.HUMAN) && !actor.isDead()) {
                 humanTeamCount ++;
             }
 
-            if (actor.team().equals(Teams.WEREWOLF)) {
+            if (actor.team().equals(Teams.WEREWOLF) && !actor.isDead()) {
                 werewolfTeamCount ++;
             }
         }
@@ -99,5 +102,14 @@ public class ActorList {
         }
 
         return null;
+    }
+
+    /**
+     * アクションバーを表示する
+     * */
+    public void showActionBar() {
+        actors.forEach(actor -> {
+            actor.showActionBar();
+        });
     }
 }
