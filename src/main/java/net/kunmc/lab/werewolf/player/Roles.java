@@ -10,7 +10,7 @@ public enum Roles {
     CITIZEN("市民", Teams.HUMAN, new Citizen(),0,0, false, false, "特殊能力なし"),
     WEREWOLF("人狼",Teams.WEREWOLF, new Werewolf(), 1,0, true, false, "/wc <text> - 人狼チャット"),
     SEER("預言者",Teams.HUMAN, new Seer(),0,1, false, true, "/f <player> - 対象を占う"),
-    MEDIUM("霊媒師",Teams.HUMAN, new Medium(),0,1, false,true, "/sp <player> - 対象を占う"),
+    MEDIUM("霊媒師",Teams.HUMAN, new Medium(),0,1, false,true, "/sp <player> - 対象を霊視する"),
     MADMAN("狂人",Teams.HUMAN, new Madman(),0,0, false, false, "特殊能力なし");
 
     public String jName;
