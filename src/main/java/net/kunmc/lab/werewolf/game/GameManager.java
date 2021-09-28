@@ -10,7 +10,7 @@ import org.bukkit.event.Listener;
 import java.util.UUID;
 
 public class GameManager implements Listener {
-    private static ActorList actorList = new ActorList();
+    static ActorList actorList = new ActorList();
     private static boolean isRunning = false;
 
     /**

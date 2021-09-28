@@ -11,4 +11,5 @@ public interface Actor {
     public void death();
     public boolean isDead();
     public Teams team();
+    public void showActionBar();
 }
