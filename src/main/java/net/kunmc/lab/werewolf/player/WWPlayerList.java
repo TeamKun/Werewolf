@@ -2,48 +2,27 @@ package net.kunmc.lab.werewolf.player;
 
 import net.kunmc.lab.werewolf.config.ConfigManager;
 import net.kunmc.lab.werewolf.config.RoleConfig;
-import net.kunmc.lab.werewolf.player.role.Citizen;
 import net.kunmc.lab.werewolf.player.role.Roles;
 import org.bukkit.entity.Player;
 
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 public class WWPlayerList {
-    private List<WWPlayer> list = new ArrayList<>();
-    private Class<ConfigManager> configManagerClass;
+    private Set<UUID> playerSet = new HashSet<>();
+    private Set<WWPlayer> actors = new HashSet<>();
 
     /**
      * プレイヤーを追加する
      * */
     public boolean addPlayer(Player player) {
-        UUID uuid = player.getUniqueId();
-
-        for (WWPlayer p : list) {
-            if (p.uuid().equals(uuid)) {
-                list.add(Roles.CITIZEN.instance(uuid));
-                return true;
-            }
-        }
-        return false;
+        return playerSet.add(player.getUniqueId());
     }
 
     /**
      * プレイヤーを削除する
      * */
     public boolean removePlayer(Player player) {
-        UUID uuid = player.getUniqueId();
-
-        for (WWPlayer p : list) {
-            if (p.uuid().equals(uuid)) {
-                list.remove(p);
-                return true;
-            }
-        }
-        return false;
+        return playerSet.remove(player.getUniqueId());
     }
 
     /**
@@ -52,26 +31,26 @@ public class WWPlayerList {
     public boolean setRole() {
         List<RoleConfig> configList = ConfigManager.roleConfigList();
 
-        List<WWPlayer> newList = new ArrayList<>();
-
         // 人数チェック
         int minPlayer = 0;
         for (RoleConfig roleConfig : configList) {
             minPlayer += roleConfig.people();
         }
-        if (list.size() < minPlayer) {
+        if (playerSet.size() < minPlayer) {
             return false;
         }
 
+        List<UUID> playerList = new ArrayList<>(playerSet);
+
         // 配役処理
-        Collections.shuffle(list);
+        Collections.shuffle(playerList);
         for (RoleConfig roleConfig : configList) {
             for (int i = 0; i < roleConfig.people(); i++) {
-                newList.add(roleConfig.role().instance(list.remove(0).uuid()));
+                actors.add(roleConfig.role().instance(playerList.remove(0)));
             }
         }
-        for (WWPlayer wwPlayer : list) {
-            newList.add(wwPlayer);
+        for (UUID uuid : playerList) {
+            actors.add(Roles.CITIZEN.instance(uuid));
         }
 
         return true;
