@@ -86,4 +86,12 @@ public class ConfigManager {
         }
         return null;
     }
+
+    public static RoleConfig Seer() {
+        return seer;
+    }
+
+    public static RoleConfig Medium() {
+        return medium;
+    }
 }

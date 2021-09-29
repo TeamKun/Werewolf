@@ -50,7 +50,7 @@ public enum RoleMeta {
         return value;
     }
 
-    public Component actionBarMessage() {
+    public String actionBarMessage() {
         String message = "";
         if (team.equals(Teams.HUMAN)) {
             message += DecorationConst.GREEN + jName;
@@ -62,7 +62,6 @@ public enum RoleMeta {
 
         message += DecorationConst.RESET + " : " + this.abilityDescription;
 
-        return Component.text(message);
+        return message;
     }
-
 }

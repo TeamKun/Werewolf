@@ -7,6 +7,8 @@ import java.util.UUID;
 public interface Actor {
     String roleName();
 
+    String actorName();
+
     UUID uuid();
 
     boolean isInhuman();

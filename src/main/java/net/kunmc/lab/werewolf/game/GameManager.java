@@ -111,4 +111,11 @@ public class GameManager implements Listener {
         // 能力を使用
         return actor.useAbilities(role, args);
     }
+
+    /**
+     * UUIDから参加者を取得する
+     * */
+    public static Actor getActor(UUID uuid) {
+        return actorList.getActor(uuid);
+    }
 }

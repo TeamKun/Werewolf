@@ -1,6 +1,7 @@
 package net.kunmc.lab.werewolf.actor;
 
 import net.kunmc.lab.werewolf.command.CommandResult;
+import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
@@ -21,6 +22,10 @@ public abstract class BaseActor implements Actor, RoleBuilder {
 
     public UUID uuid() {
         return this.uuid;
+    }
+
+    public String actorName() {
+        return Bukkit.getPlayer(this.uuid).getName();
     }
 
     public String roleName() {
@@ -45,7 +50,7 @@ public abstract class BaseActor implements Actor, RoleBuilder {
 
     public void showActionBar() {
         Player player = Bukkit.getPlayer(this.uuid);
-        player.sendActionBar(this.roleMeta.actionBarMessage());
+        player.sendActionBar(Component.text(this.roleMeta.actionBarMessage()));
     }
 
     public CommandResult useAbilities(RoleMeta role, Object arg) {
