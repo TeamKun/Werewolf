@@ -4,7 +4,7 @@ import java.util.UUID;
 
 public class Werewolf extends BaseActor {
     private Werewolf(UUID uuid) {
-        super(uuid, RoleMeta.CITIZEN);
+        super(uuid, RoleMeta.WEREWOLF);
     }
 
     Werewolf() {

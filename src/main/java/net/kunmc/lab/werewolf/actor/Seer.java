@@ -12,7 +12,7 @@ import java.util.UUID;
 
 public class Seer extends BaseSpecialActor {
     private Seer(UUID uuid) {
-        super(uuid, RoleMeta.CITIZEN, new SkillPoint(ConfigManager.Seer().ability()));
+        super(uuid, RoleMeta.SEER, new SkillPoint(ConfigManager.Seer().ability()));
     }
 
     Seer() {
