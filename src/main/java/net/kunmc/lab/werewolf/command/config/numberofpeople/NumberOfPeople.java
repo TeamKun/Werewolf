@@ -7,6 +7,6 @@ public class NumberOfPeople extends Command {
     public NumberOfPeople() {
         super(CommandNameConst.COMMAND_NUMBER_OF_PEOPLE);
 
-        children(new PMedium(), new PSeer(), new Pmadman() ,new PWerewolf());
+        children(new Medium(), new Seer(), new Madman(), new Werewolf());
     }
 }

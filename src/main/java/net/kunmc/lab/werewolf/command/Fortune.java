@@ -3,7 +3,7 @@ package net.kunmc.lab.werewolf.command;
 import dev.kotx.flylib.command.Command;
 import dev.kotx.flylib.command.CommandContext;
 import net.kunmc.lab.werewolf.game.GameManager;
-import net.kunmc.lab.werewolf.player.Roles;
+import net.kunmc.lab.werewolf.actor.RoleMeta;
 
 public class Fortune extends Command {
     public Fortune() {
@@ -17,7 +17,7 @@ public class Fortune extends Command {
     @Override
     public void execute(CommandContext ctx) {
         try {
-            CommandResult result = GameManager.useAbilities(ctx.getSender(), Roles.SEER, ctx.getTypedArgs().get(0));
+            CommandResult result = GameManager.useAbilities(ctx.getSender(), RoleMeta.SEER, ctx.getTypedArgs().get(0));
 
             if (result.isSuccess()) {
                 ctx.success(result.message());

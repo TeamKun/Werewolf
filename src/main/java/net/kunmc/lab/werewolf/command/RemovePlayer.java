@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 
 import java.util.List;
 
-public class RemovePlayer extends Command {
+class RemovePlayer extends Command {
     public RemovePlayer() {
         super(CommandNameConst.COMMAND_REMOVE_PLAYER);
 

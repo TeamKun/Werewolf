@@ -5,7 +5,7 @@ import dev.kotx.flylib.command.CommandContext;
 import net.kunmc.lab.werewolf.game.GameManager;
 import org.jetbrains.annotations.NotNull;
 
-public class Stop extends Command {
+class Stop extends Command {
     public Stop() {
         super(CommandNameConst.COMMAND_STOP);
     }

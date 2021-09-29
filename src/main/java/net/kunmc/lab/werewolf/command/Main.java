@@ -1,4 +1,5 @@
 package net.kunmc.lab.werewolf.command;
+
 import dev.kotx.flylib.command.Command;
 import net.kunmc.lab.werewolf.command.config.Config;
 

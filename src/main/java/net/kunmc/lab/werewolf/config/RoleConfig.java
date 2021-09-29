@@ -1,13 +1,13 @@
 package net.kunmc.lab.werewolf.config;
 
-import net.kunmc.lab.werewolf.player.Roles;
+import net.kunmc.lab.werewolf.actor.RoleMeta;
 
-public class RoleConfig {
-    private Roles role;
+ public class RoleConfig {
+    private RoleMeta role;
     private int people;
     private int ability;
 
-    RoleConfig(Roles role, int people, int ability) {
+    RoleConfig(RoleMeta role, int people, int ability) {
         this.role = role;
         setPeople(people);
         setAbility(ability);
@@ -20,7 +20,6 @@ public class RoleConfig {
         this.people = value;
     }
 
-
     void setAbility(int value) {
         if (this.role.numberOfAbilitiesMin > value) {
             value = this.role.numberOfPeopleMin;
@@ -28,12 +27,14 @@ public class RoleConfig {
         this.ability = value;
     }
 
-    public Roles role() {
+    public RoleMeta role() {
         return this.role;
     }
+
     public int people() {
         return this.people;
     }
+
     public int ability() {
         return this.ability;
     }

@@ -5,7 +5,7 @@ import dev.kotx.flylib.command.CommandContext;
 import net.kunmc.lab.werewolf.game.GameManager;
 import org.jetbrains.annotations.NotNull;
 
-public class Start extends Command {
+class Start extends Command {
     public Start() {
         super(CommandNameConst.COMMAND_START);
     }

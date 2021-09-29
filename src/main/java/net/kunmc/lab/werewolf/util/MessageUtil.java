@@ -7,7 +7,7 @@ public class MessageUtil {
 
     /**
      * 全員にタイトルを表示
-     * */
+     */
     public static void sendTitleAll(String title, String subtitle, int fadeIn, int stay, int fadeOut) {
         Bukkit.getOnlinePlayers().forEach(player -> {
             player.sendTitle(title, subtitle, fadeIn, stay, fadeOut);
@@ -16,7 +16,7 @@ public class MessageUtil {
 
     /**
      * タイトルをクリア
-     * */
+     */
     public static void clearTitle() {
         Bukkit.getOnlinePlayers().forEach(player -> {
             player.sendTitle("", "", 0, 0, 0);
@@ -25,7 +25,7 @@ public class MessageUtil {
 
     /**
      * 全員にメッセージを表示
-     * */
+     */
     public static void broadcast(String message) {
         Bukkit.broadcast(Component.text(message));
     }

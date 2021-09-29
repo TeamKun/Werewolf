@@ -1,9 +1,6 @@
-package net.kunmc.lab.werewolf.player.role;
+package net.kunmc.lab.werewolf.actor;
 
 import net.kunmc.lab.werewolf.command.CommandResult;
-import net.kunmc.lab.werewolf.player.Actor;
-import net.kunmc.lab.werewolf.player.BaseActor;
-import net.kunmc.lab.werewolf.player.Roles;
 import org.bukkit.entity.Player;
 
 import java.util.List;
@@ -11,10 +8,10 @@ import java.util.UUID;
 
 public class Seer extends BaseActor {
     private Seer(UUID uuid) {
-        super(uuid, Roles.CITIZEN);
+        super(uuid, RoleMeta.CITIZEN);
     }
 
-    public Seer() {
+    Seer() {
         super();
     }
 
@@ -24,9 +21,9 @@ public class Seer extends BaseActor {
     }
 
     @Override
-    public CommandResult useAbilities(Roles role, Object arg) {
+    public CommandResult useAbilities(RoleMeta role, Object arg) {
 
-        if (!this.role.equals(role)) {
+        if (!this.roleMeta.equals(role)) {
             return new CommandResult(false, "あなたはこの能力を使用できません");
         }
 

@@ -1,4 +1,4 @@
-package net.kunmc.lab.werewolf.player;
+package net.kunmc.lab.werewolf.actor;
 
 import net.kunmc.lab.werewolf.config.ConfigManager;
 import net.kunmc.lab.werewolf.config.RoleConfig;
@@ -12,21 +12,21 @@ public class ActorList {
 
     /**
      * プレイヤーを追加する
-     * */
+     */
     public boolean addPlayer(Player player) {
         return playerSet.add(player.getUniqueId());
     }
 
     /**
      * プレイヤーを削除する
-     * */
+     */
     public boolean removePlayer(Player player) {
         return playerSet.remove(player.getUniqueId());
     }
 
     /**
      * プレイヤーが死亡したときの処理
-     * */
+     */
     public boolean death(UUID uuid) {
         for (Actor actor : actors) {
             if (actor.uuid().equals(uuid)) {
@@ -39,7 +39,7 @@ public class ActorList {
 
     /**
      * 配役する
-     * */
+     */
     public boolean setRole() {
         List<RoleConfig> configList = ConfigManager.roleConfigList();
         // 配役をクリア
@@ -68,7 +68,7 @@ public class ActorList {
         }
         for (UUID uuid : playerList) {
             tmpSet.add(uuid);
-            actors.add(Roles.CITIZEN.instance(uuid));
+            actors.add(RoleMeta.CITIZEN.instance(uuid));
         }
 
         this.playerSet = tmpSet;
@@ -78,17 +78,17 @@ public class ActorList {
 
     /**
      * 勝利した陣営を取得する
-     * */
+     */
     public Teams winnerTeam() {
         int humanTeamCount = 0;
         int werewolfTeamCount = 0;
         for (Actor actor : this.actors) {
             if (actor.team().equals(Teams.HUMAN) && !actor.isDead()) {
-                humanTeamCount ++;
+                humanTeamCount++;
             }
 
             if (actor.team().equals(Teams.WEREWOLF) && !actor.isDead()) {
-                werewolfTeamCount ++;
+                werewolfTeamCount++;
             }
         }
 
@@ -107,7 +107,7 @@ public class ActorList {
 
     /**
      * アクションバーを表示する
-     * */
+     */
     public void showActionBar() {
         actors.forEach(actor -> {
             actor.showActionBar();
@@ -116,7 +116,7 @@ public class ActorList {
 
     /**
      * UUIDから参加者を取得する
-     * */
+     */
     public Actor getActor(UUID uuid) {
         for (Actor actor : actors) {
             if (actor.uuid().equals(uuid)) {

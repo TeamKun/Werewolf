@@ -1,6 +1,6 @@
 package net.kunmc.lab.werewolf.game;
 
-import net.kunmc.lab.werewolf.player.Teams;
+import net.kunmc.lab.werewolf.actor.Teams;
 import org.bukkit.GameMode;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.PlayerDeathEvent;
@@ -10,7 +10,7 @@ import java.util.UUID;
 public class Listener implements org.bukkit.event.Listener {
     /**
      * プレイヤー死亡時の処理
-     * */
+     */
     @EventHandler(ignoreCancelled = true)
     public void onPlayerDeath(PlayerDeathEvent event) {
         if (!GameManager.isIsRunning()) {

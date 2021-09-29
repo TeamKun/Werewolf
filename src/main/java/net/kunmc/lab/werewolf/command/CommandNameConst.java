@@ -16,5 +16,4 @@ public class CommandNameConst {
     public static final String COMMAND_MEDIUM = "medium";
     public static final String COMMAND_MADMAN = "madman";
     public static final String COMMAND_FORTUNE = "f";
-
 }

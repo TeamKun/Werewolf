@@ -1,7 +1,7 @@
 package net.kunmc.lab.werewolf.config;
 
 import net.kunmc.lab.werewolf.Werewolf;
-import net.kunmc.lab.werewolf.player.Roles;
+import net.kunmc.lab.werewolf.actor.RoleMeta;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import java.lang.reflect.Field;
@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConfigManager {
-    /** コンフィグオブジェクト */
+    /**
+     * コンフィグオブジェクト
+     */
     static FileConfiguration config;
 
     private static RoleConfig werewolf;
@@ -19,22 +21,22 @@ public class ConfigManager {
 
     /**
      * コンフィグをロードする
-     * */
+     */
     public static void loadConfig() {
         Werewolf.plugin.saveDefaultConfig();
 
         //　コンフィグファイルを取得
         config = Werewolf.plugin.getConfig();
 
-        werewolf = new RoleConfig(Roles.WEREWOLF, config.getInt(ConfigPathConst.PEOPLE_WEREWOLF), 0);
-        seer = new RoleConfig(Roles.SEER, config.getInt(ConfigPathConst.PEOPLE_SEER), config.getInt(ConfigPathConst.ABILITY_SEER));
-        medium = new RoleConfig(Roles.MEDIUM, config.getInt(ConfigPathConst.PEOPLE_MEDIUM), config.getInt(ConfigPathConst.ABILITY_MEDIUM));
-        madman = new RoleConfig(Roles.MADMAN, config.getInt(ConfigPathConst.PEOPLE_MADMAN), 0);
+        werewolf = new RoleConfig(RoleMeta.WEREWOLF, config.getInt(ConfigPathConst.PEOPLE_WEREWOLF), 0);
+        seer = new RoleConfig(RoleMeta.SEER, config.getInt(ConfigPathConst.PEOPLE_SEER), config.getInt(ConfigPathConst.ABILITY_SEER));
+        medium = new RoleConfig(RoleMeta.MEDIUM, config.getInt(ConfigPathConst.PEOPLE_MEDIUM), config.getInt(ConfigPathConst.ABILITY_MEDIUM));
+        madman = new RoleConfig(RoleMeta.MADMAN, config.getInt(ConfigPathConst.PEOPLE_MADMAN), 0);
     }
 
     /**
      * コンフィグをセットする
-     * */
+     */
     public static void setConfig(String path, Object value) {
         config.set(path, value);
         Werewolf.plugin.saveConfig();
@@ -43,7 +45,7 @@ public class ConfigManager {
 
     /**
      * config show に表示する文字列を取得する
-     * */
+     */
     public static StringBuilder showConfig() {
         List<RoleConfig> list = roleConfigList();
         StringBuilder msg = new StringBuilder();
@@ -65,7 +67,7 @@ public class ConfigManager {
 
     /**
      * 役職設定をリストにして返す
-     * */
+     */
     public static List<RoleConfig> roleConfigList() {
         try {
             List<RoleConfig> list = new ArrayList<>();

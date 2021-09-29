@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 
 import java.util.List;
 
-public class AddPlayer extends Command {
+class AddPlayer extends Command {
     public AddPlayer() {
         super(CommandNameConst.COMMAND_ADD_PLAYER);
 

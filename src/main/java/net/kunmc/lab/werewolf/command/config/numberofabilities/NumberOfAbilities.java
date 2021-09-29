@@ -7,6 +7,6 @@ public class NumberOfAbilities extends Command {
     public NumberOfAbilities() {
         super(CommandNameConst.COMMAND_NUMBER_OF_ABILITIES);
 
-        children(new Amedium(), new ASeer());
+        children(new Medium(), new Seer());
     }
 }
