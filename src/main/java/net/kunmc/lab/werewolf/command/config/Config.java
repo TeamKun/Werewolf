@@ -7,6 +7,6 @@ public class Config extends Command {
     public Config() {
         super(CommandNameConst.COMMAND_CONFIG);
 
-        children(new Set(), new Show());
+        children(new Set(), new Show(), new Reload());
     }
 }

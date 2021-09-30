@@ -2,13 +2,12 @@ package net.kunmc.lab.werewolf.command;
 
 import dev.kotx.flylib.command.Command;
 import dev.kotx.flylib.command.CommandContext;
-import org.bukkit.entity.Player;
-
-import java.util.List;
+import net.kunmc.lab.werewolf.actor.RoleMeta;
+import net.kunmc.lab.werewolf.game.GameManager;
 
 public class Spiritual extends Command {
     public Spiritual() {
-        super(CommandNameConst.COMMAND_FORTUNE);
+        super(CommandNameConst.COMMAND_SPIRITUAL);
 
         usage(usageBuilder -> {
             usageBuilder.entityArgument("target");
@@ -18,17 +17,13 @@ public class Spiritual extends Command {
     @Override
     public void execute(CommandContext ctx) {
         try {
+            CommandResult result = GameManager.useAbilities(ctx.getSender(), RoleMeta.MEDIUM, ctx.getTypedArgs().get(0));
 
-            List<Object> targetList = (List) ctx.getTypedArgs().get(0);
-
-            if (targetList.size() != 1) {
-                ctx.fail("対象とできるのは１人のみです。");
-                return;
+            if (result.isSuccess()) {
+                ctx.success(result.message());
+            } else {
+                ctx.fail(result.message());
             }
-
-            Player target = (Player) targetList.get(0);
-
-            ctx.success(target.getName() + "を霊視しました");
 
         } catch (IndexOutOfBoundsException e) {
             ctx.fail("引数が不正です");

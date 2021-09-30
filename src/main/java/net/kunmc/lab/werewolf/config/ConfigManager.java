@@ -22,9 +22,12 @@ public class ConfigManager {
     /**
      * コンフィグをロードする
      */
-    public static void loadConfig() {
+    public static void loadConfig(boolean isReload) {
         Werewolf.plugin.saveDefaultConfig();
 
+        if (isReload) {
+            Werewolf.plugin.reloadConfig();
+        }
         //　コンフィグファイルを取得
         config = Werewolf.plugin.getConfig();
 
@@ -40,7 +43,7 @@ public class ConfigManager {
     public static void setConfig(String path, Object value) {
         config.set(path, value);
         Werewolf.plugin.saveConfig();
-        loadConfig();
+        loadConfig(false);
     }
 
     /**

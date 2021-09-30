@@ -1,7 +1,6 @@
 package net.kunmc.lab.werewolf.actor;
 
 import net.kunmc.lab.werewolf.util.DecorationConst;
-import net.kyori.adventure.text.Component;
 
 import java.util.UUID;
 

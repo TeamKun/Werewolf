@@ -1,10 +1,10 @@
 package net.kunmc.lab.werewolf.game;
 
-import net.kunmc.lab.werewolf.command.CommandResult;
 import net.kunmc.lab.werewolf.actor.Actor;
 import net.kunmc.lab.werewolf.actor.ActorList;
 import net.kunmc.lab.werewolf.actor.RoleMeta;
 import net.kunmc.lab.werewolf.actor.Teams;
+import net.kunmc.lab.werewolf.command.CommandResult;
 import net.kunmc.lab.werewolf.util.DecorationConst;
 import net.kunmc.lab.werewolf.util.MessageUtil;
 import org.bukkit.Bukkit;

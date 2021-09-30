@@ -9,6 +9,7 @@ public class CommandNameConst {
     public static final String COMMAND_CONFIG = "config";
     public static final String COMMAND_SHOW = "show";
     public static final String COMMAND_SET = "set";
+    public static final String COMMAND_RELOAD = "reload";
     public static final String COMMAND_NUMBER_OF_ABILITIES = "numberofabilities";
     public static final String COMMAND_NUMBER_OF_PEOPLE = "numberofpeople";
     public static final String COMMAND_WEREWOLF = "werewolf";
@@ -16,4 +17,5 @@ public class CommandNameConst {
     public static final String COMMAND_MEDIUM = "medium";
     public static final String COMMAND_MADMAN = "madman";
     public static final String COMMAND_FORTUNE = "f";
+    public static final String COMMAND_SPIRITUAL = "sp";
 }
