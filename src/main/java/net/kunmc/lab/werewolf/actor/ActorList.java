@@ -60,7 +60,11 @@ public class ActorList {
 
         // 参加者をアドベンチャーモードに変更
         for (UUID uuid : playerSet) {
-            Bukkit.getPlayer(uuid).setGameMode(GameMode.ADVENTURE);
+            Player player = Bukkit.getPlayer(uuid);
+
+            if (player != null) {
+                player.setGameMode(GameMode.ADVENTURE);
+            }
         }
 
         // TODO 基本アイテムの付与

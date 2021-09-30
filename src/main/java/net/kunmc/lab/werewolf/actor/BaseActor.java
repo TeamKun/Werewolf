@@ -66,7 +66,9 @@ public abstract class BaseActor implements Actor, RoleBuilder {
     @Override
     public void showActionBar() {
         Player player = Bukkit.getPlayer(this.uuid);
-        player.sendActionBar(Component.text(this.roleMeta.actionBarMessage()));
+        if (player != null) {
+            player.sendActionBar(Component.text(this.roleMeta.actionBarMessage()));
+        }
     }
 
     @Override
