@@ -21,7 +21,7 @@ public abstract class BaseSpecialActor extends BaseActor {
     @Override
     public void showActionBar() {
         Player player = Bukkit.getPlayer(this.uuid);
-        String message = this.roleMeta.actionBarMessage() + "残り" + this.skillPoint.current() + "回";
+        String message = this.roleMeta.actionBarMessage() + " - 残り" + this.skillPoint.current() + "回";
         player.sendActionBar(Component.text(message));
     }
 }
