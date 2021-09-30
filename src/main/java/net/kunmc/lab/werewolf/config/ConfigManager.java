@@ -4,7 +4,6 @@ import net.kunmc.lab.werewolf.Werewolf;
 import net.kunmc.lab.werewolf.actor.RoleMeta;
 import org.bukkit.configuration.file.FileConfiguration;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,7 +59,7 @@ public class ConfigManager {
 
     /**
      * 役職のコンフィグを取得する.
-     * */
+     */
     public static RoleConfig roleConfig(RoleMeta roleMeta) {
         return new RoleConfig(roleMeta);
     }

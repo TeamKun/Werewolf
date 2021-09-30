@@ -129,7 +129,7 @@ public class ActorList {
 
     /**
      * 人狼のリストを取得する
-     * */
+     */
     public List<Actor> werewolfList() {
         List<Actor> result = new ArrayList<>();
         actors.forEach(actor -> {

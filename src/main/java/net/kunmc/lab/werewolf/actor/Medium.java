@@ -1,7 +1,6 @@
 package net.kunmc.lab.werewolf.actor;
 
 import net.kunmc.lab.werewolf.command.CommandResult;
-import net.kunmc.lab.werewolf.config.ConfigManager;
 import net.kunmc.lab.werewolf.game.GameManager;
 import org.bukkit.entity.Player;
 

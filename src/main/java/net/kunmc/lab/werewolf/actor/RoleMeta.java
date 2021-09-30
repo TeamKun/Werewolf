@@ -1,6 +1,5 @@
 package net.kunmc.lab.werewolf.actor;
 
-import net.kunmc.lab.werewolf.config.RoleConfig;
 import net.kunmc.lab.werewolf.util.DecorationConst;
 
 import java.util.UUID;

@@ -20,13 +20,14 @@ public class SkillPoint {
         if (this.current <= 0) {
             return 0;
         }
-        current --;
+        current--;
         return current;
     }
 
     public int max() {
         return this.max;
     }
+
     public int current() {
         return this.current;
     }

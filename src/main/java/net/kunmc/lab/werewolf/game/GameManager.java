@@ -115,14 +115,14 @@ public class GameManager implements Listener {
 
     /**
      * UUIDから参加者を取得する
-     * */
+     */
     public static Actor getActor(UUID uuid) {
         return actorList.getActor(uuid);
     }
 
     /**
      * 人狼のリストを取得する.
-     * */
+     */
     public static List<Actor> getWerewolfList() {
         return actorList.werewolfList();
     }
