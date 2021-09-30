@@ -7,10 +7,10 @@ import net.kunmc.lab.werewolf.config.ConfigManager;
 
 public class Role extends Command {
     public Role() {
-        super(CommandNameConst.COMMAND_OTHERS);
+        super(CommandNameConst.COMMAND_ROLE);
     }
     @Override
     public void execute(CommandContext ctx) {
-        ctx.success(ConfigManager.showOthersConfig().toString());
+        ctx.success(ConfigManager.showRoleConfig().toString());
     }
 }

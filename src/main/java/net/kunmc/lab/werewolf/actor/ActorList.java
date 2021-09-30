@@ -2,6 +2,8 @@ package net.kunmc.lab.werewolf.actor;
 
 import net.kunmc.lab.werewolf.config.ConfigManager;
 import net.kunmc.lab.werewolf.config.RoleConfig;
+import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 
 import java.util.*;
@@ -40,7 +42,17 @@ public class ActorList {
     /**
      * 配役する
      */
-    public boolean setRole() {
+    public boolean setActors() {
+
+        // 参加者をアドベンチャーモードに変更
+        for (UUID uuid : playerSet) {
+            Bukkit.getPlayer(uuid).setGameMode(GameMode.ADVENTURE);
+        }
+
+        // TODO 基本アイテムの付与
+        // TODO 特殊アイテムの付与
+
+        // 配役処理
         List<RoleConfig> configList = ConfigManager.roleConfigList();
         // 配役をクリア
         actors.clear();
