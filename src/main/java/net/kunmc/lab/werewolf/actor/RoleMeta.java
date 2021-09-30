@@ -14,6 +14,7 @@ public enum RoleMeta {
             null,
             false,
             false,
+            null,
             "特殊能力なし"),
     WEREWOLF("人狼",
             Teams.WEREWOLF,
@@ -24,6 +25,7 @@ public enum RoleMeta {
             null,
             true,
             false,
+            "wc",
             "/wc <text> - 人狼チャット"),
     SEER("預言者",
             Teams.HUMAN,
@@ -34,7 +36,8 @@ public enum RoleMeta {
             "abilitiesSeer",
             false,
             true,
-            "/f <player> - 対象を占う"),
+            "ft",
+            "/ft <player> - 対象を占う"),
     MEDIUM("霊媒師",
             Teams.HUMAN,
             new Medium(),
@@ -44,6 +47,7 @@ public enum RoleMeta {
             "abilitiesMedium",
             false,
             true,
+            "sp",
             "/sp <player> - 対象を霊視する"),
     MADMAN("狂人",
             Teams.HUMAN,
@@ -54,6 +58,7 @@ public enum RoleMeta {
             null,
             false,
             false,
+            null,
             "特殊能力なし");
 
     public String jName;
@@ -65,6 +70,7 @@ public enum RoleMeta {
     public String abilityConfigPath;
     public boolean isInhuman;
     public boolean haveAbility;
+    public String abilityCommandName;
     public String abilityDescription;
 
     RoleMeta(String jName,
@@ -76,6 +82,7 @@ public enum RoleMeta {
              String abilityConfigPath,
              boolean isInhuman,
              boolean haveAbility,
+             String abilityCommandName,
              String abilityDescription) {
 
         this.jName = jName;
@@ -87,6 +94,7 @@ public enum RoleMeta {
         this.abilityConfigPath = abilityConfigPath;
         this.isInhuman = isInhuman;
         this.haveAbility = haveAbility;
+        this.abilityCommandName = abilityCommandName;
         this.abilityDescription = abilityDescription;
     }
 

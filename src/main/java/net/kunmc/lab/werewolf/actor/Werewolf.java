@@ -4,6 +4,7 @@ import net.kunmc.lab.werewolf.command.CommandResult;
 import net.kunmc.lab.werewolf.game.GameManager;
 import net.kunmc.lab.werewolf.util.DecorationConst;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.Bukkit;
 
 import java.util.List;
@@ -33,10 +34,10 @@ public class Werewolf extends BaseActor {
         // 人狼チャット
         List<Actor> werewolfList = GameManager.getWerewolfList();
 
-        String message = DecorationConst.GRAY + "<人狼チャット : " + this.actorName() + ">" + arg.toString();
+        String message = DecorationConst.ITALIC+ "<人狼チャット : " + this.actorName() + "> " + arg.toString();
 
         werewolfList.forEach(actor -> {
-            Bukkit.getPlayer(actor.uuid()).sendMessage(Component.text(message));
+            Bukkit.getPlayer(actor.uuid()).sendMessage(message);
         });
 
         return new CommandResult(true, null);
