@@ -1,8 +1,8 @@
 package net.kunmc.lab.werewolf.game;
 
-import net.kunmc.lab.werewolf.command.AbilityArgument;
 import net.kunmc.lab.werewolf.actor.Actor;
 import net.kunmc.lab.werewolf.actor.ActorList;
+import net.kunmc.lab.werewolf.command.AbilityArgument;
 import net.kunmc.lab.werewolf.command.CommandResult;
 import net.kunmc.lab.werewolf.meta.TeamMeta;
 import net.kunmc.lab.werewolf.util.DecorationConst;

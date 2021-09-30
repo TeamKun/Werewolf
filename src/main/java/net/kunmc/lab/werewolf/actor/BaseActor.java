@@ -2,7 +2,6 @@ package net.kunmc.lab.werewolf.actor;
 
 import net.kunmc.lab.werewolf.meta.RoleMeta;
 import net.kunmc.lab.werewolf.meta.TeamMeta;
-import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 

@@ -2,8 +2,8 @@ package net.kunmc.lab.werewolf.meta;
 
 import dev.kotx.flylib.command.UsageBuilder;
 import dev.kotx.flylib.command.arguments.TextArgument;
-import net.kunmc.lab.werewolf.command.AbilityArgument;
 import net.kunmc.lab.werewolf.actor.Actor;
+import net.kunmc.lab.werewolf.command.AbilityArgument;
 import net.kunmc.lab.werewolf.command.CommandResult;
 import net.kunmc.lab.werewolf.game.GameManager;
 import net.kunmc.lab.werewolf.util.DecorationConst;
