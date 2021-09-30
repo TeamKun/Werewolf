@@ -1,6 +1,6 @@
 package net.kunmc.lab.werewolf.actor;
 
-public class SkillPoint {
+class SkillPoint {
     private int max;
     private int current;
 

@@ -89,6 +89,7 @@ public class ActorList {
         Set<UUID> tmpSet = new HashSet<>();
         // 配役処理
         Collections.shuffle(playerList);
+
         for (RoleConfig roleConfig : configList) {
             for (int i = 0; i < roleConfig.people(); i++) {
                 UUID uuid = playerList.remove(0);

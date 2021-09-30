@@ -1,9 +1,9 @@
 package net.kunmc.lab.werewolf.game;
 
+import net.kunmc.lab.werewolf.command.AbilityArgument;
 import net.kunmc.lab.werewolf.actor.Actor;
 import net.kunmc.lab.werewolf.actor.ActorList;
 import net.kunmc.lab.werewolf.command.CommandResult;
-import net.kunmc.lab.werewolf.meta.RoleMeta;
 import net.kunmc.lab.werewolf.meta.TeamMeta;
 import net.kunmc.lab.werewolf.util.DecorationConst;
 import net.kunmc.lab.werewolf.util.MessageUtil;
@@ -12,9 +12,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.function.Function;
 
 public class GameManager implements Listener {
     static ActorList actorList = new ActorList();
@@ -89,7 +89,9 @@ public class GameManager implements Listener {
     /**
      * 能力を使用する
      */
-    public static CommandResult useAbilities(CommandSender sender, RoleMeta role, Object args) {
+    public static CommandResult useAbilities(CommandSender sender,
+                                             AbilityArgument arg,
+                                             Function<AbilityArgument, CommandResult> action) {
 
         if (!isRunning) {
             return new CommandResult(false, "このコマンドは人狼ゲーム進行中のみ使用できます");
@@ -111,7 +113,7 @@ public class GameManager implements Listener {
         }
 
         // 能力を使用
-        return actor.useAbilities(role, args);
+        return actor.useAbility(arg, action);
     }
 
     /**

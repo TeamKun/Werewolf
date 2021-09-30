@@ -1,6 +1,5 @@
 package net.kunmc.lab.werewolf.actor;
 
-import net.kunmc.lab.werewolf.command.CommandResult;
 import net.kunmc.lab.werewolf.meta.RoleMeta;
 import net.kunmc.lab.werewolf.meta.TeamMeta;
 import net.kyori.adventure.text.Component;
@@ -9,15 +8,12 @@ import org.bukkit.entity.Player;
 
 import java.util.UUID;
 
-public abstract class BaseActor implements Actor, RoleBuilder {
+abstract class BaseActor implements Actor{
     protected RoleMeta roleMeta;
     protected UUID uuid;
     protected boolean isDead;
 
-    protected BaseActor() {
-    }
-
-    protected BaseActor(UUID uuid, RoleMeta role) {
+    public BaseActor(UUID uuid, RoleMeta role) {
         this.roleMeta = role;
         this.uuid = uuid;
     }
@@ -64,15 +60,7 @@ public abstract class BaseActor implements Actor, RoleBuilder {
     }
 
     @Override
-    public void showActionBar() {
-        Player player = Bukkit.getPlayer(this.uuid);
-        if (player != null) {
-            player.sendActionBar(Component.text(this.roleMeta.actionBarMessage()));
-        }
-    }
-
-    @Override
-    public CommandResult useAbilities(RoleMeta role, Object arg) {
-        return new CommandResult(false, "あなたはこの能力を使用できません");
+    public Player player() {
+        return Bukkit.getPlayer(this.uuid);
     }
 }

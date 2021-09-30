@@ -1,6 +1,8 @@
 package net.kunmc.lab.werewolf.meta;
 
-import net.kunmc.lab.werewolf.actor.*;
+import net.kunmc.lab.werewolf.actor.Actor;
+import net.kunmc.lab.werewolf.actor.GeneralActor;
+import net.kunmc.lab.werewolf.actor.SpecialActor;
 import net.kunmc.lab.werewolf.util.DecorationConst;
 
 import java.util.UUID;
@@ -8,7 +10,6 @@ import java.util.UUID;
 public enum RoleMeta {
     CITIZEN("市民",
             TeamMeta.HUMAN,
-            new Citizen(),
             0,
             0,
             null,
@@ -19,7 +20,6 @@ public enum RoleMeta {
             "特殊能力なし"),
     WEREWOLF("人狼",
             TeamMeta.WEREWOLF,
-            new Werewolf(),
             1,
             0,
             "peopleWerewolf",
@@ -30,7 +30,6 @@ public enum RoleMeta {
             "/wc <text> - 人狼チャット"),
     SEER("預言者",
             TeamMeta.HUMAN,
-            new Seer(),
             0,
             1,
             "peopleSeer",
@@ -41,7 +40,6 @@ public enum RoleMeta {
             "/ft <player> - 対象を占う"),
     MEDIUM("霊媒師",
             TeamMeta.HUMAN,
-            new Medium(),
             0,
             1,
             "peopleMedium",
@@ -52,7 +50,6 @@ public enum RoleMeta {
             "/sp <player> - 対象を霊視する"),
     MADMAN("狂人",
             TeamMeta.HUMAN,
-            new Madman(),
             0,
             0,
             "peopleMadman",
@@ -64,43 +61,43 @@ public enum RoleMeta {
 
     public String jName;
     public TeamMeta team;
-    private RoleBuilder builder;
     public int numberOfPeopleMin;
     public int numberOfAbilitiesMin;
     public String peopleConfigPath;
     public String abilityConfigPath;
     public boolean isInhuman;
-    public boolean haveAbility;
+    public boolean isSpecial;
     public String abilityCommandName;
     public String abilityDescription;
 
     RoleMeta(String jName,
              TeamMeta team,
-             RoleBuilder builder,
              int numberOfPeopleMin,
              int numberOfAbilitiesMin,
              String peopleConfigPath,
              String abilityConfigPath,
              boolean isInhuman,
-             boolean haveAbility,
+             boolean isSpecial,
              String abilityCommandName,
              String abilityDescription) {
 
         this.jName = jName;
         this.team = team;
-        this.builder = builder;
         this.numberOfPeopleMin = numberOfPeopleMin;
         this.numberOfAbilitiesMin = numberOfAbilitiesMin;
         this.peopleConfigPath = peopleConfigPath;
         this.abilityConfigPath = abilityConfigPath;
         this.isInhuman = isInhuman;
-        this.haveAbility = haveAbility;
+        this.isSpecial = isSpecial;
         this.abilityCommandName = abilityCommandName;
         this.abilityDescription = abilityDescription;
     }
 
     public Actor instance(UUID uuid) {
-        return builder.instance(uuid);
+        if (this.isSpecial) {
+            return new SpecialActor(uuid,this);
+        }
+        return new GeneralActor(uuid, this);
     }
 
     public int numberOfPeople(int value) {

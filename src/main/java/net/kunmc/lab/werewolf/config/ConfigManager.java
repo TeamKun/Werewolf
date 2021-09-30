@@ -49,7 +49,7 @@ public class ConfigManager {
         });
         msg.append("--能力の使用回数\n");
         list.forEach(roleConfig -> {
-            if (roleConfig.role().haveAbility) {
+            if (roleConfig.role().isSpecial) {
                 msg.append(roleConfig.role().jName + ": " + roleConfig.ability() + "回\n");
             }
         });

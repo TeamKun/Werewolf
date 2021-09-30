@@ -7,9 +7,11 @@ import net.kunmc.lab.werewolf.meta.AbilityMeta;
 import net.kunmc.lab.werewolf.meta.RoleMeta;
 
 class AbilityCommand extends Command {
+    private AbilityMeta abilityMeta;
     private RoleMeta roleMeta;
     public AbilityCommand(AbilityMeta abilityMeta) {
         super(abilityMeta.commandName);
+        this.abilityMeta = abilityMeta;
         this.roleMeta = abilityMeta.roleMeta;
 
         usage(abilityMeta::appendUsage);
@@ -18,7 +20,10 @@ class AbilityCommand extends Command {
     @Override
     public void execute(CommandContext ctx) {
         try {
-            CommandResult result = GameManager.useAbilities(ctx.getSender(), this.roleMeta, ctx.getTypedArgs().get(0));
+
+            AbilityArgument arg = this.abilityMeta.getArgument(ctx.getTypedArgs().get(0));
+
+            CommandResult result = GameManager.useAbilities(ctx.getSender(), arg, this.abilityMeta.action);
 
             if (result.isSuccess() && result.message() != null) {
                 ctx.success(result.message());
