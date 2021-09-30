@@ -11,7 +11,5 @@ public class CommandNameConst {
     public static final String COMMAND_SET = "set";
     public static final String COMMAND_RELOAD = "reload";
     public static final String COMMAND_ROLE = "role";
-    public static final String COMMAND_FORTUNE = "ft";
-    public static final String COMMAND_SPIRITUAL = "sp";
-    public static final String COMMAND_WOLF_CHAT = "wc";
+    public static final String COMMAND_OTHERS = "others";
 }

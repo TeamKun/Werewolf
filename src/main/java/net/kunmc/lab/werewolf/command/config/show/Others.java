@@ -1,17 +1,16 @@
-package net.kunmc.lab.werewolf.command.config;
+package net.kunmc.lab.werewolf.command.config.show;
 
 import dev.kotx.flylib.command.Command;
 import dev.kotx.flylib.command.CommandContext;
 import net.kunmc.lab.werewolf.command.CommandNameConst;
 import net.kunmc.lab.werewolf.config.ConfigManager;
 
-class Show extends Command {
-    public Show() {
-        super(CommandNameConst.COMMAND_SHOW);
+public class Others extends Command {
+    public Others() {
+        super(CommandNameConst.COMMAND_ROLE);
     }
-
     @Override
     public void execute(CommandContext ctx) {
-        ctx.success(ConfigManager.showConfig().toString());
+        ctx.success(ConfigManager.showRoleConfig().toString());
     }
 }

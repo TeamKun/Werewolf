@@ -36,9 +36,9 @@ public class ConfigManager {
     }
 
     /**
-     * config show に表示する文字列を取得する
+     * config show role に表示する文字列を取得する
      */
-    public static StringBuilder showConfig() {
+    public static StringBuilder showRoleConfig() {
         List<RoleConfig> list = roleConfigList();
         StringBuilder msg = new StringBuilder();
         msg.append("◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇現在の設定◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇\n");
@@ -52,6 +52,21 @@ public class ConfigManager {
                 msg.append(roleConfig.role().jName + ": " + roleConfig.ability() + "回\n");
             }
         });
+        msg.append("◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇現在の設定◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇\n");
+
+        return msg;
+    }
+
+    /**
+     * config show others に表示する文字列を取得する
+     */
+    public static StringBuilder showOthersConfig() {
+        List<RoleConfig> list = roleConfigList();
+        StringBuilder msg = new StringBuilder();
+        msg.append("◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇現在の設定◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇\n");
+        for (OthersConfig value : OthersConfig.values()) {
+            msg.append(value.jName + " : " + getOthersConfig(value) + "\n");
+        }
         msg.append("◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇現在の設定◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇\n");
 
         return msg;
@@ -76,5 +91,12 @@ public class ConfigManager {
             list.add(roleConfig(roleMeta));
         }
         return list;
+    }
+
+    /**
+     * その他のコンフィグを取得する
+     * */
+    public static Object getOthersConfig(OthersConfig othersConfig) {
+        return config.getObject(othersConfig.path, othersConfig.type);
     }
 }

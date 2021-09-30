@@ -1,3 +1,7 @@
+###########
+# 役職設定 #
+###########
+
 # 人数
 peopleWerewolf: 2
 peopleSeer: 1
@@ -7,3 +11,10 @@ peopleMadman: 1
 # 能力使用回数
 abilitiesSeer: 1
 abilitiesMedium: 1
+
+############
+# その他設定 #
+############
+
+# アクションバーの表示/非表示
+showActionbar: true

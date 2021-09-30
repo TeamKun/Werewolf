@@ -23,7 +23,7 @@ public class GameManager implements Listener {
      * ゲーム開始
      */
     public static boolean start() {
-        if (!actorList.setRole()) {
+        if (!actorList.setActors()) {
             return false;
         }
         isRunning = true;

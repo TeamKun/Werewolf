@@ -17,8 +17,6 @@ public class Listener implements org.bukkit.event.Listener {
             return;
         }
 
-        event.getEntity().setGameMode(GameMode.SPECTATOR);
-
         // プレイヤーの死亡処理
         UUID uuid = event.getEntity().getUniqueId();
         GameManager.deathActor(uuid);
