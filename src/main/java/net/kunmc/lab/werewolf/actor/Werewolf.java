@@ -1,6 +1,12 @@
 package net.kunmc.lab.werewolf.actor;
 
 import net.kunmc.lab.werewolf.command.CommandResult;
+import net.kunmc.lab.werewolf.game.GameManager;
+import net.kunmc.lab.werewolf.util.DecorationConst;
+import net.kyori.adventure.text.Component;
+import org.bukkit.Bukkit;
+
+import java.util.List;
 import java.util.UUID;
 
 public class Werewolf extends BaseActor {
@@ -24,6 +30,15 @@ public class Werewolf extends BaseActor {
             return new CommandResult(false, "あなたはこの能力を使用できません");
         }
 
-        return null;
+        // 人狼チャット
+        List<Actor> werewolfList = GameManager.getWerewolfList();
+
+        String message = DecorationConst.GRAY + "<人狼チャット : " + this.actorName() + ">" + arg.toString();
+
+        werewolfList.forEach(actor -> {
+            Bukkit.getPlayer(actor.uuid()).sendMessage(Component.text(message));
+        });
+
+        return new CommandResult(true, null);
     }
 }

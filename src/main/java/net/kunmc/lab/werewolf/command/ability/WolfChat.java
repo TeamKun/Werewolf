@@ -1,8 +1,11 @@
-package net.kunmc.lab.werewolf.command;
+package net.kunmc.lab.werewolf.command.ability;
 
 import dev.kotx.flylib.command.Command;
 import dev.kotx.flylib.command.CommandContext;
+import dev.kotx.flylib.command.arguments.TextArgument;
 import net.kunmc.lab.werewolf.actor.RoleMeta;
+import net.kunmc.lab.werewolf.command.CommandNameConst;
+import net.kunmc.lab.werewolf.command.CommandResult;
 import net.kunmc.lab.werewolf.game.GameManager;
 
 public class WolfChat extends Command {
@@ -10,7 +13,7 @@ public class WolfChat extends Command {
         super(CommandNameConst.COMMAND_WOLF_CHAT);
 
         usage(usageBuilder -> {
-            usageBuilder.textArgument("chat");
+            usageBuilder.textArgument("message", TextArgument.Type.PHRASE);
         });
     }
 

@@ -12,6 +12,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
+import java.util.List;
 import java.util.UUID;
 
 public class GameManager implements Listener {
@@ -117,5 +118,12 @@ public class GameManager implements Listener {
      * */
     public static Actor getActor(UUID uuid) {
         return actorList.getActor(uuid);
+    }
+
+    /**
+     * 人狼のリストを取得する.
+     * */
+    public static List<Actor> getWerewolfList() {
+        return actorList.werewolfList();
     }
 }

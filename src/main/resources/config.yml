@@ -1,6 +1,9 @@
+# 人数
+numberofpeople-werewolf: 2
+numberofpeople-seer: 1
+numberofpeople-medium: 1
+numberofpeople-madman: 1
+
+# 能力使用回数
 numberofabilities-seer: 1
 numberofabilities-medium: 1
-numberofpeople-werewolf: 1
-numberofpeople-seer: 0
-numberofpeople-medium: 0
-numberofpeople-madman: 0

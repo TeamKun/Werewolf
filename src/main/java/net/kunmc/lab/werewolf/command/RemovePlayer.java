@@ -12,7 +12,7 @@ class RemovePlayer extends Command {
         super(CommandNameConst.COMMAND_REMOVE_PLAYER);
 
         usage(usageBuilder -> {
-            usageBuilder.entityArgument("selector");
+            usageBuilder.entityArgument("player");
         });
     }
 

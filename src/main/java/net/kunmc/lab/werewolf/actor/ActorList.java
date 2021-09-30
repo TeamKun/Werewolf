@@ -126,4 +126,18 @@ public class ActorList {
 
         return null;
     }
+
+    /**
+     * 人狼のリストを取得する
+     * */
+    public List<Actor> werewolfList() {
+        List<Actor> result = new ArrayList<>();
+        actors.forEach(actor -> {
+            if (actor.isWerewolf()) {
+                result.add(actor);
+            }
+        });
+
+        return result;
+    }
 }

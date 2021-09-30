@@ -1,13 +1,15 @@
-package net.kunmc.lab.werewolf.command;
+package net.kunmc.lab.werewolf.command.ability;
 
 import dev.kotx.flylib.command.Command;
 import dev.kotx.flylib.command.CommandContext;
 import net.kunmc.lab.werewolf.actor.RoleMeta;
+import net.kunmc.lab.werewolf.command.CommandNameConst;
+import net.kunmc.lab.werewolf.command.CommandResult;
 import net.kunmc.lab.werewolf.game.GameManager;
 
-public class Spiritual extends Command {
-    public Spiritual() {
-        super(CommandNameConst.COMMAND_SPIRITUAL);
+public class Fortune extends Command {
+    public Fortune() {
+        super(CommandNameConst.COMMAND_FORTUNE);
 
         usage(usageBuilder -> {
             usageBuilder.entityArgument("target");
@@ -17,7 +19,7 @@ public class Spiritual extends Command {
     @Override
     public void execute(CommandContext ctx) {
         try {
-            CommandResult result = GameManager.useAbilities(ctx.getSender(), RoleMeta.MEDIUM, ctx.getTypedArgs().get(0));
+            CommandResult result = GameManager.useAbilities(ctx.getSender(), RoleMeta.SEER, ctx.getTypedArgs().get(0));
 
             if (result.isSuccess()) {
                 ctx.success(result.message());
