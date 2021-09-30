@@ -12,7 +12,7 @@ class AddPlayer extends Command {
         super(CommandNameConst.COMMAND_ADD_PLAYER);
 
         usage(usageBuilder -> {
-            usageBuilder.entityArgument("selector");
+            usageBuilder.entityArgument("player");
         });
     }
 
