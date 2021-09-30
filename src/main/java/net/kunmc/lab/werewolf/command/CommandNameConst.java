@@ -18,4 +18,5 @@ public class CommandNameConst {
     public static final String COMMAND_MADMAN = "madman";
     public static final String COMMAND_FORTUNE = "f";
     public static final String COMMAND_SPIRITUAL = "sp";
+    public static final String COMMAND_WOLF_CHAT = "wc";
 }
