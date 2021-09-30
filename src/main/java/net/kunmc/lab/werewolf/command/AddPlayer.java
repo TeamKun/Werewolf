@@ -3,6 +3,7 @@ package net.kunmc.lab.werewolf.command;
 import dev.kotx.flylib.command.Command;
 import dev.kotx.flylib.command.CommandContext;
 import net.kunmc.lab.werewolf.game.GameManager;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import java.util.List;
@@ -27,7 +28,7 @@ class AddPlayer extends Command {
                     }
                 }
             }
-            ctx.success(count + "人のプレイヤーを追加しました.");
+            ctx.success(count + "人のプレイヤーを追加しました。");
         } catch (IndexOutOfBoundsException e) {
             ctx.fail("引数が不正です");
         }

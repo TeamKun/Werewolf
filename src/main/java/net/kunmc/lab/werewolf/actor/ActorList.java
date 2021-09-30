@@ -29,6 +29,18 @@ public class ActorList {
     }
 
     /**
+     * 参加者のリストを取得する
+     * */
+    public List<Player> getPlayerList() {
+        List<Player> result = new ArrayList<>();
+        actors.forEach(actor -> {
+            result.add(Bukkit.getPlayer(actor.uuid()));
+        });
+
+        return result;
+    }
+
+    /**
      * プレイヤーが死亡したときの処理
      */
     public boolean death(UUID uuid) {

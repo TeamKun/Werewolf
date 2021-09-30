@@ -27,7 +27,7 @@ class RemovePlayer extends Command {
                     }
                 }
             }
-            ctx.success(count + "人のプレイヤーを削除しました.");
+            ctx.success(count + "人のプレイヤーを削除しました。");
         } catch (IndexOutOfBoundsException e) {
             ctx.fail("引数が不正です");
         }

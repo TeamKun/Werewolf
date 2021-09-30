@@ -2,7 +2,7 @@ package net.kunmc.lab.werewolf.meta;
 
 import dev.kotx.flylib.command.UsageBuilder;
 import dev.kotx.flylib.command.arguments.TextArgument;
-import net.kunmc.lab.werewolf.meta.RoleMeta;
+import net.kunmc.lab.werewolf.game.GameManager;
 
 import java.util.function.Consumer;
 
@@ -15,12 +15,20 @@ public enum AbilityMeta {
     FORTUNE(RoleMeta.SEER,
             "ft",
             usageBuilder -> {
-                usageBuilder.entityArgument("target");
+                usageBuilder.textArgument("target", suggestionBuilder -> {
+                    GameManager.getPlayerList().forEach(player -> {
+                        suggestionBuilder.suggest(player.getName());
+                    });
+                });
             }),
     SPIRITUAL(RoleMeta.MEDIUM,
             "sp",
             usageBuilder -> {
-                usageBuilder.entityArgument("target");
+                usageBuilder.textArgument("target", suggestionBuilder -> {
+                    GameManager.getPlayerList().forEach(player -> {
+                        suggestionBuilder.suggest(player.getName());
+                    });
+                });
             });
 
     public RoleMeta roleMeta;

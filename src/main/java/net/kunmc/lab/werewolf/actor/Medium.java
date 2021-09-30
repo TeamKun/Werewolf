@@ -3,6 +3,7 @@ package net.kunmc.lab.werewolf.actor;
 import net.kunmc.lab.werewolf.command.CommandResult;
 import net.kunmc.lab.werewolf.game.GameManager;
 import net.kunmc.lab.werewolf.meta.RoleMeta;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import java.util.List;
@@ -29,13 +30,12 @@ public class Medium extends BaseSpecialActor {
             return new CommandResult(false, "あなたはこの能力を使用できません");
         }
 
-        List<Object> targetList = (List) arg;
+        Player target = Bukkit.getPlayer((String) arg);
 
-        if (targetList.size() != 1) {
-            return new CommandResult(false, "対象とできるのは１人のみです。");
+        if (target == null) {
+            return new CommandResult(false, "存在しないプレイヤーです");
         }
 
-        Player target = (Player) targetList.get(0);
         Actor targetActor = GameManager.getActor(target.getUniqueId());
 
         if (targetActor == null) {

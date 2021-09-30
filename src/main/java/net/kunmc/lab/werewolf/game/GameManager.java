@@ -2,9 +2,9 @@ package net.kunmc.lab.werewolf.game;
 
 import net.kunmc.lab.werewolf.actor.Actor;
 import net.kunmc.lab.werewolf.actor.ActorList;
-import net.kunmc.lab.werewolf.meta.TeamMeta;
 import net.kunmc.lab.werewolf.command.CommandResult;
 import net.kunmc.lab.werewolf.meta.RoleMeta;
+import net.kunmc.lab.werewolf.meta.TeamMeta;
 import net.kunmc.lab.werewolf.util.DecorationConst;
 import net.kunmc.lab.werewolf.util.MessageUtil;
 import org.bukkit.Bukkit;
@@ -12,6 +12,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -126,4 +127,12 @@ public class GameManager implements Listener {
     public static List<Actor> getWerewolfList() {
         return actorList.werewolfList();
     }
+
+    /**
+     * 参加者のリストを取得する
+     * */
+    public static List<Player> getPlayerList() {
+        return actorList.getPlayerList();
+    }
+
 }
