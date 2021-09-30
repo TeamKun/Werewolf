@@ -1,16 +1,18 @@
-package net.kunmc.lab.werewolf.command.ability;
+package net.kunmc.lab.werewolf.command;
 
 import dev.kotx.flylib.command.Command;
 import dev.kotx.flylib.command.CommandContext;
-import net.kunmc.lab.werewolf.actor.RoleMeta;
-import net.kunmc.lab.werewolf.command.CommandResult;
 import net.kunmc.lab.werewolf.game.GameManager;
+import net.kunmc.lab.werewolf.meta.AbilityMeta;
+import net.kunmc.lab.werewolf.meta.RoleMeta;
 
-public abstract class BaseAbilityCommand extends Command {
+class AbilityCommand extends Command {
     private RoleMeta roleMeta;
-    protected BaseAbilityCommand(RoleMeta roleMeta) {
-        super(roleMeta.abilityCommandName);
-        this.roleMeta = roleMeta;
+    public AbilityCommand(AbilityMeta abilityMeta) {
+        super(abilityMeta.commandName);
+        this.roleMeta = abilityMeta.roleMeta;
+
+        usage(abilityMeta::appendUsage);
     }
 
     @Override

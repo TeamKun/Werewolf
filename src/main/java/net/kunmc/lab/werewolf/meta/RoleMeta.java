@@ -1,12 +1,13 @@
-package net.kunmc.lab.werewolf.actor;
+package net.kunmc.lab.werewolf.meta;
 
+import net.kunmc.lab.werewolf.actor.*;
 import net.kunmc.lab.werewolf.util.DecorationConst;
 
 import java.util.UUID;
 
 public enum RoleMeta {
     CITIZEN("市民",
-            Teams.HUMAN,
+            TeamMeta.HUMAN,
             new Citizen(),
             0,
             0,
@@ -17,7 +18,7 @@ public enum RoleMeta {
             null,
             "特殊能力なし"),
     WEREWOLF("人狼",
-            Teams.WEREWOLF,
+            TeamMeta.WEREWOLF,
             new Werewolf(),
             1,
             0,
@@ -28,7 +29,7 @@ public enum RoleMeta {
             "wc",
             "/wc <text> - 人狼チャット"),
     SEER("預言者",
-            Teams.HUMAN,
+            TeamMeta.HUMAN,
             new Seer(),
             0,
             1,
@@ -39,7 +40,7 @@ public enum RoleMeta {
             "ft",
             "/ft <player> - 対象を占う"),
     MEDIUM("霊媒師",
-            Teams.HUMAN,
+            TeamMeta.HUMAN,
             new Medium(),
             0,
             1,
@@ -50,7 +51,7 @@ public enum RoleMeta {
             "sp",
             "/sp <player> - 対象を霊視する"),
     MADMAN("狂人",
-            Teams.HUMAN,
+            TeamMeta.HUMAN,
             new Madman(),
             0,
             0,
@@ -62,7 +63,7 @@ public enum RoleMeta {
             "特殊能力なし");
 
     public String jName;
-    public Teams team;
+    public TeamMeta team;
     private RoleBuilder builder;
     public int numberOfPeopleMin;
     public int numberOfAbilitiesMin;
@@ -74,7 +75,7 @@ public enum RoleMeta {
     public String abilityDescription;
 
     RoleMeta(String jName,
-             Teams team,
+             TeamMeta team,
              RoleBuilder builder,
              int numberOfPeopleMin,
              int numberOfAbilitiesMin,
@@ -118,11 +119,11 @@ public enum RoleMeta {
 
     public String actionBarMessage() {
         String message = "";
-        if (team.equals(Teams.HUMAN)) {
+        if (team.equals(TeamMeta.HUMAN)) {
             message += DecorationConst.GREEN + jName;
         }
 
-        if (team.equals(Teams.WEREWOLF) || this.equals(RoleMeta.MADMAN)) {
+        if (team.equals(TeamMeta.WEREWOLF) || this.equals(RoleMeta.MADMAN)) {
             message += DecorationConst.RED + jName;
         }
 

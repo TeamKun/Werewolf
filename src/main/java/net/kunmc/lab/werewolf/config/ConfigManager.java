@@ -1,7 +1,8 @@
 package net.kunmc.lab.werewolf.config;
 
 import net.kunmc.lab.werewolf.Werewolf;
-import net.kunmc.lab.werewolf.actor.RoleMeta;
+import net.kunmc.lab.werewolf.meta.ConfigMeta;
+import net.kunmc.lab.werewolf.meta.RoleMeta;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import java.util.ArrayList;
@@ -64,7 +65,7 @@ public class ConfigManager {
         List<RoleConfig> list = roleConfigList();
         StringBuilder msg = new StringBuilder();
         msg.append("◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇現在の設定◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇\n");
-        for (OthersConfig value : OthersConfig.values()) {
+        for (ConfigMeta value : ConfigMeta.values()) {
             msg.append(value.jName + " : " + getOthersConfig(value) + "\n");
         }
         msg.append("◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇現在の設定◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇\n");
@@ -96,7 +97,7 @@ public class ConfigManager {
     /**
      * その他のコンフィグを取得する
      * */
-    public static Object getOthersConfig(OthersConfig othersConfig) {
+    public static Object getOthersConfig(ConfigMeta othersConfig) {
         return config.getObject(othersConfig.path, othersConfig.type);
     }
 }

@@ -1,6 +1,8 @@
 package net.kunmc.lab.werewolf.actor;
 
 import net.kunmc.lab.werewolf.command.CommandResult;
+import net.kunmc.lab.werewolf.meta.RoleMeta;
+import net.kunmc.lab.werewolf.meta.TeamMeta;
 
 import java.util.UUID;
 
@@ -19,7 +21,7 @@ public interface Actor {
 
     boolean isDead();
 
-    Teams team();
+    TeamMeta team();
 
     void showActionBar();
 

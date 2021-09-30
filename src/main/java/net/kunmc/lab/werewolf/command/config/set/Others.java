@@ -1,15 +1,15 @@
-package net.kunmc.lab.werewolf.command.config.othres;
+package net.kunmc.lab.werewolf.command.config.set;
 
 import dev.kotx.flylib.command.Command;
 import net.kunmc.lab.werewolf.command.CommandNameConst;
-import net.kunmc.lab.werewolf.config.OthersConfig;
+import net.kunmc.lab.werewolf.meta.ConfigMeta;
 
-public class Others extends Command {
+class Others extends Command {
     public Others() {
         super(CommandNameConst.COMMAND_OTHERS);
 
         try {
-            for (OthersConfig othersConfig : OthersConfig.values()) {
+            for (ConfigMeta othersConfig : ConfigMeta.values()) {
                 children(new ConfigItem(othersConfig));
             }
         } catch (Exception e) {

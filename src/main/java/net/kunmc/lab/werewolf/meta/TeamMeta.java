@@ -1,15 +1,15 @@
-package net.kunmc.lab.werewolf.actor;
+package net.kunmc.lab.werewolf.meta;
 
 /**
  * 勝利条件の判定に使用する値の為狂人は人間陣営とする
  */
-public enum Teams {
+public enum TeamMeta {
     HUMAN("人間"),
     WEREWOLF("人狼");
 
     public String jName;
 
-    Teams(String jName) {
+    TeamMeta(String jName) {
         this.jName = jName;
     }
 }

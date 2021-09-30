@@ -2,9 +2,9 @@ package net.kunmc.lab.werewolf.game;
 
 import net.kunmc.lab.werewolf.actor.Actor;
 import net.kunmc.lab.werewolf.actor.ActorList;
-import net.kunmc.lab.werewolf.actor.RoleMeta;
-import net.kunmc.lab.werewolf.actor.Teams;
+import net.kunmc.lab.werewolf.meta.TeamMeta;
 import net.kunmc.lab.werewolf.command.CommandResult;
+import net.kunmc.lab.werewolf.meta.RoleMeta;
 import net.kunmc.lab.werewolf.util.DecorationConst;
 import net.kunmc.lab.werewolf.util.MessageUtil;
 import org.bukkit.Bukkit;
@@ -33,7 +33,7 @@ public class GameManager implements Listener {
     /**
      * ゲーム終了
      */
-    public static void end(Teams winnerTeam) {
+    public static void end(TeamMeta winnerTeam) {
         MessageUtil.broadcast(DecorationConst.GREEN + winnerTeam.jName + "の勝利！");
         isRunning = false;
     }
@@ -81,7 +81,7 @@ public class GameManager implements Listener {
     /**
      * 勝利した陣営を取得する
      */
-    public static Teams winnerTeam() {
+    public static TeamMeta winnerTeam() {
         return actorList.winnerTeam();
     }
 

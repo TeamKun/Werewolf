@@ -1,18 +1,18 @@
-package net.kunmc.lab.werewolf.command.config.role;
+package net.kunmc.lab.werewolf.command.config.set;
 
 import dev.kotx.flylib.command.Command;
 import dev.kotx.flylib.command.CommandContext;
-import net.kunmc.lab.werewolf.actor.RoleMeta;
 import net.kunmc.lab.werewolf.config.ConfigManager;
+import net.kunmc.lab.werewolf.meta.RoleMeta;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Locale;
 
-public abstract class BaseRoleCommand extends Command {
+class RoleCommand extends Command {
     private RoleMeta roleMeta;
     private boolean isSpecialRole;
 
-    public BaseRoleCommand(RoleMeta roleMeta) {
+    public RoleCommand(RoleMeta roleMeta) {
         super(roleMeta.name().toLowerCase(Locale.ROOT));
         this.roleMeta = roleMeta;
         this.isSpecialRole = this.roleMeta.abilityConfigPath != null;

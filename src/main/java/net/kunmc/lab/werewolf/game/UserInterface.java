@@ -1,7 +1,7 @@
 package net.kunmc.lab.werewolf.game;
 
 import net.kunmc.lab.werewolf.config.ConfigManager;
-import net.kunmc.lab.werewolf.config.OthersConfig;
+import net.kunmc.lab.werewolf.meta.ConfigMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class UserInterface extends BukkitRunnable {
@@ -12,7 +12,7 @@ public class UserInterface extends BukkitRunnable {
             return;
         }
 
-        if (!(Boolean) ConfigManager.getOthersConfig(OthersConfig.IS_SHOW_ACTIONBAR)) {
+        if (!(Boolean) ConfigManager.getOthersConfig(ConfigMeta.IS_SHOW_ACTIONBAR)) {
             return;
         }
 

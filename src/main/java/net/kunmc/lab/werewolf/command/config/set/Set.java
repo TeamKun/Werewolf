@@ -1,11 +1,9 @@
-package net.kunmc.lab.werewolf.command.config;
+package net.kunmc.lab.werewolf.command.config.set;
 
 import dev.kotx.flylib.command.Command;
 import net.kunmc.lab.werewolf.command.CommandNameConst;
-import net.kunmc.lab.werewolf.command.config.role.Role;
-import net.kunmc.lab.werewolf.command.config.othres.Others;
 
-class Set extends Command {
+public class Set extends Command {
     public Set() {
         super(CommandNameConst.COMMAND_SET);
 

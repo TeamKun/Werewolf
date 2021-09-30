@@ -1,7 +1,6 @@
 package net.kunmc.lab.werewolf.game;
 
-import net.kunmc.lab.werewolf.actor.Teams;
-import org.bukkit.GameMode;
+import net.kunmc.lab.werewolf.meta.TeamMeta;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.PlayerDeathEvent;
 
@@ -21,7 +20,7 @@ public class Listener implements org.bukkit.event.Listener {
         UUID uuid = event.getEntity().getUniqueId();
         GameManager.deathActor(uuid);
         // 勝敗判定
-        Teams winnerTeam = GameManager.winnerTeam();
+        TeamMeta winnerTeam = GameManager.winnerTeam();
         // 勝者なし
         if (winnerTeam == null) {
             return;

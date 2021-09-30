@@ -1,6 +1,6 @@
-package net.kunmc.lab.werewolf.config;
+package net.kunmc.lab.werewolf.meta;
 
-public enum OthersConfig {
+public enum ConfigMeta {
 
     IS_SHOW_ACTIONBAR("アクションバーの表示", "showActionbar", Boolean.class);
 
@@ -8,7 +8,7 @@ public enum OthersConfig {
     public String path;
     public Class type;
 
-    OthersConfig(String jName, String path, Class type) {
+    ConfigMeta(String jName, String path, Class type) {
         this.jName = jName;
         this.path = path;
         this.type = type;

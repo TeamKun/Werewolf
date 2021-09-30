@@ -2,6 +2,7 @@ package net.kunmc.lab.werewolf.actor;
 
 import net.kunmc.lab.werewolf.command.CommandResult;
 import net.kunmc.lab.werewolf.game.GameManager;
+import net.kunmc.lab.werewolf.meta.RoleMeta;
 import org.bukkit.entity.Player;
 
 import java.util.List;
@@ -12,7 +13,7 @@ public class Seer extends BaseSpecialActor {
         super(uuid, RoleMeta.SEER);
     }
 
-    Seer() {
+    public Seer() {
         super();
     }
 

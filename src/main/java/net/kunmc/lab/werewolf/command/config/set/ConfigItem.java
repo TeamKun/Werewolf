@@ -1,15 +1,12 @@
-package net.kunmc.lab.werewolf.command.config.othres;
+package net.kunmc.lab.werewolf.command.config.set;
 
 import dev.kotx.flylib.command.Command;
 import kotlin.Unit;
 import net.kunmc.lab.werewolf.config.ConfigManager;
-import net.kunmc.lab.werewolf.config.OthersConfig;
+import net.kunmc.lab.werewolf.meta.ConfigMeta;
 
-import java.lang.reflect.Field;
-import java.util.Locale;
-
-public class ConfigItem extends Command {
-    public ConfigItem(OthersConfig config) {
+class ConfigItem extends Command {
+    public ConfigItem(ConfigMeta config) {
         super(config.path);
 
         String name = config.path;

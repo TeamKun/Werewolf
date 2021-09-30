@@ -2,6 +2,8 @@ package net.kunmc.lab.werewolf.actor;
 
 import net.kunmc.lab.werewolf.config.ConfigManager;
 import net.kunmc.lab.werewolf.config.RoleConfig;
+import net.kunmc.lab.werewolf.meta.RoleMeta;
+import net.kunmc.lab.werewolf.meta.TeamMeta;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
@@ -91,27 +93,27 @@ public class ActorList {
     /**
      * 勝利した陣営を取得する
      */
-    public Teams winnerTeam() {
+    public TeamMeta winnerTeam() {
         int humanTeamCount = 0;
         int werewolfTeamCount = 0;
         for (Actor actor : this.actors) {
-            if (actor.team().equals(Teams.HUMAN) && !actor.isDead()) {
+            if (actor.team().equals(TeamMeta.HUMAN) && !actor.isDead()) {
                 humanTeamCount++;
             }
 
-            if (actor.team().equals(Teams.WEREWOLF) && !actor.isDead()) {
+            if (actor.team().equals(TeamMeta.WEREWOLF) && !actor.isDead()) {
                 werewolfTeamCount++;
             }
         }
 
         // 人間が0の時
         if (humanTeamCount == 0) {
-            return Teams.WEREWOLF;
+            return TeamMeta.WEREWOLF;
         }
 
         // 人狼が0の時
         if (werewolfTeamCount == 0) {
-            return Teams.HUMAN;
+            return TeamMeta.HUMAN;
         }
 
         return null;

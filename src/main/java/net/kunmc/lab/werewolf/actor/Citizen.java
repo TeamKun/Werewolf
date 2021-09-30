@@ -1,5 +1,7 @@
 package net.kunmc.lab.werewolf.actor;
 
+import net.kunmc.lab.werewolf.meta.RoleMeta;
+
 import java.util.UUID;
 
 public class Citizen extends BaseActor {
@@ -7,7 +9,7 @@ public class Citizen extends BaseActor {
         super(uuid, RoleMeta.CITIZEN);
     }
 
-    Citizen() {
+    public Citizen() {
         super();
     }
 

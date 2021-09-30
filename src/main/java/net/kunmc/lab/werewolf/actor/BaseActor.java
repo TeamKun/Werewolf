@@ -1,10 +1,10 @@
 package net.kunmc.lab.werewolf.actor;
 
 import net.kunmc.lab.werewolf.command.CommandResult;
-import net.kunmc.lab.werewolf.util.DecorationConst;
+import net.kunmc.lab.werewolf.meta.RoleMeta;
+import net.kunmc.lab.werewolf.meta.TeamMeta;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
-import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 
 import java.util.UUID;
@@ -21,6 +21,7 @@ public abstract class BaseActor implements Actor, RoleBuilder {
         this.roleMeta = role;
         this.uuid = uuid;
     }
+
 
     @Override
     public UUID uuid() {
@@ -58,7 +59,7 @@ public abstract class BaseActor implements Actor, RoleBuilder {
     }
 
     @Override
-    public Teams team() {
+    public TeamMeta team() {
         return roleMeta.team;
     }
 

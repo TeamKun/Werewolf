@@ -2,9 +2,8 @@ package net.kunmc.lab.werewolf.actor;
 
 import net.kunmc.lab.werewolf.command.CommandResult;
 import net.kunmc.lab.werewolf.game.GameManager;
+import net.kunmc.lab.werewolf.meta.RoleMeta;
 import net.kunmc.lab.werewolf.util.DecorationConst;
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.Bukkit;
 
 import java.util.List;
@@ -15,7 +14,7 @@ public class Werewolf extends BaseActor {
         super(uuid, RoleMeta.WEREWOLF);
     }
 
-    Werewolf() {
+    public Werewolf() {
         super();
     }
 

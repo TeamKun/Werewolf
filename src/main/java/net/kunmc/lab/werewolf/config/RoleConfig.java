@@ -1,6 +1,6 @@
 package net.kunmc.lab.werewolf.config;
 
-import net.kunmc.lab.werewolf.actor.RoleMeta;
+import net.kunmc.lab.werewolf.meta.RoleMeta;
 
 public class RoleConfig {
     private RoleMeta role;
