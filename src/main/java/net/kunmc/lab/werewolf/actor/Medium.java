@@ -10,7 +10,7 @@ import java.util.UUID;
 
 public class Medium extends BaseSpecialActor {
     private Medium(UUID uuid) {
-        super(uuid, RoleMeta.MEDIUM, new SkillPoint(ConfigManager.Medium().ability()));
+        super(uuid, RoleMeta.MEDIUM);
     }
 
     Medium() {

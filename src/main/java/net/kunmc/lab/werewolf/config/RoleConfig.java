@@ -2,15 +2,17 @@ package net.kunmc.lab.werewolf.config;
 
 import net.kunmc.lab.werewolf.actor.RoleMeta;
 
- public class RoleConfig {
+public class RoleConfig {
     private RoleMeta role;
     private int people;
     private int ability;
 
-    RoleConfig(RoleMeta role, int people, int ability) {
+    RoleConfig(RoleMeta role) {
         this.role = role;
-        setPeople(people);
-        setAbility(ability);
+        setPeople(ConfigManager.config.getInt(role.peopleConfigPath));
+        if (role.abilityConfigPath != null) {
+            setAbility(ConfigManager.config.getInt(role.abilityConfigPath));
+        }
     }
 
     void setPeople(int value) {

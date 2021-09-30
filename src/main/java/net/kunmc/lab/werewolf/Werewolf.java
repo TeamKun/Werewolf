@@ -1,8 +1,8 @@
 package net.kunmc.lab.werewolf;
 
 import dev.kotx.flylib.FlyLib;
-import net.kunmc.lab.werewolf.command.ability.Fortune;
 import net.kunmc.lab.werewolf.command.Main;
+import net.kunmc.lab.werewolf.command.ability.Fortune;
 import net.kunmc.lab.werewolf.command.ability.Spiritual;
 import net.kunmc.lab.werewolf.command.ability.WolfChat;
 import net.kunmc.lab.werewolf.config.ConfigManager;

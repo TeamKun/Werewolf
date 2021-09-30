@@ -14,11 +14,6 @@ public class ConfigManager {
      */
     static FileConfiguration config;
 
-    private static RoleConfig werewolf;
-    private static RoleConfig seer;
-    private static RoleConfig medium;
-    private static RoleConfig madman;
-
     /**
      * コンフィグをロードする
      */
@@ -30,11 +25,6 @@ public class ConfigManager {
         }
         //　コンフィグファイルを取得
         config = Werewolf.plugin.getConfig();
-
-        werewolf = new RoleConfig(RoleMeta.WEREWOLF, config.getInt(ConfigPathConst.PEOPLE_WEREWOLF), 0);
-        seer = new RoleConfig(RoleMeta.SEER, config.getInt(ConfigPathConst.PEOPLE_SEER), config.getInt(ConfigPathConst.ABILITY_SEER));
-        medium = new RoleConfig(RoleMeta.MEDIUM, config.getInt(ConfigPathConst.PEOPLE_MEDIUM), config.getInt(ConfigPathConst.ABILITY_MEDIUM));
-        madman = new RoleConfig(RoleMeta.MADMAN, config.getInt(ConfigPathConst.PEOPLE_MADMAN), 0);
     }
 
     /**
@@ -69,32 +59,23 @@ public class ConfigManager {
     }
 
     /**
+     * 役職のコンフィグを取得する.
+     * */
+    public static RoleConfig roleConfig(RoleMeta roleMeta) {
+        return new RoleConfig(roleMeta);
+    }
+
+    /**
      * 役職設定をリストにして返す
      */
     public static List<RoleConfig> roleConfigList() {
-        try {
-            List<RoleConfig> list = new ArrayList<>();
-            for (Field field : ConfigManager.class.getDeclaredFields()) {
-                Object value = field.get(null);
-
-                if (!(value instanceof RoleConfig)) {
-                    continue;
-                }
-
-                list.add((RoleConfig) value);
+        List<RoleConfig> list = new ArrayList<>();
+        for (RoleMeta roleMeta : RoleMeta.values()) {
+            if (roleMeta.equals(RoleMeta.CITIZEN)) {
+                continue;
             }
-            return list;
-        } catch (Exception e) {
-            e.printStackTrace();
+            list.add(roleConfig(roleMeta));
         }
-        return null;
-    }
-
-    public static RoleConfig Seer() {
-        return seer;
-    }
-
-    public static RoleConfig Medium() {
-        return medium;
+        return list;
     }
 }
