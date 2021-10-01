@@ -1,4 +1,4 @@
-package net.kunmc.lab.werewolf.actor;
+package net.kunmc.lab.werewolf.player;
 
 import net.kunmc.lab.werewolf.config.ConfigManager;
 import net.kunmc.lab.werewolf.config.RoleConfig;
