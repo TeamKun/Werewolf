@@ -1,4 +1,4 @@
-package net.kunmc.lab.werewolf.player;
+package net.kunmc.lab.werewolf.actor;
 
 import net.kunmc.lab.werewolf.command.AbilityArgument;
 import net.kunmc.lab.werewolf.command.CommandResult;

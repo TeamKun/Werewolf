@@ -1,8 +1,8 @@
 package net.kunmc.lab.werewolf.meta;
 
-import net.kunmc.lab.werewolf.player.Actor;
-import net.kunmc.lab.werewolf.player.GeneralActor;
-import net.kunmc.lab.werewolf.player.SpecialActor;
+import net.kunmc.lab.werewolf.actor.Actor;
+import net.kunmc.lab.werewolf.actor.GeneralActor;
+import net.kunmc.lab.werewolf.actor.SpecialActor;
 import net.kunmc.lab.werewolf.util.DecorationConst;
 
 import java.util.UUID;

@@ -1,4 +1,4 @@
-package net.kunmc.lab.werewolf.player;
+package net.kunmc.lab.werewolf.actor;
 
 import net.kunmc.lab.werewolf.meta.RoleMeta;
 import net.kunmc.lab.werewolf.meta.TeamMeta;

@@ -1,4 +1,4 @@
-package net.kunmc.lab.werewolf.player;
+package net.kunmc.lab.werewolf.actor;
 
 class SkillPoint {
     private int max;
