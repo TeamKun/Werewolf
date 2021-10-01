@@ -4,7 +4,7 @@ import dev.kotx.flylib.command.UsageBuilder;
 import dev.kotx.flylib.command.arguments.TextArgument;
 import net.kunmc.lab.werewolf.command.AbilityArgument;
 import net.kunmc.lab.werewolf.command.CommandResult;
-import net.kunmc.lab.werewolf.logic.GameManager;
+import net.kunmc.lab.werewolf.logic.GameLogic;
 import net.kunmc.lab.werewolf.util.DecorationConst;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -22,7 +22,7 @@ public enum AbilityMeta {
             String.class,
             arg -> {
                 // 人狼チャット
-                List<Actor> werewolfList = GameManager.getWerewolfList();
+                List<Actor> werewolfList = GameLogic.getWerewolfList();
 
                 String message = DecorationConst.ITALIC+ "<人狼チャット : " + "this.actorName()" + "> " + arg.value();
 
@@ -36,7 +36,7 @@ public enum AbilityMeta {
             "ft",
             usageBuilder -> {
                 usageBuilder.textArgument("target", suggestionBuilder -> {
-                    GameManager.getPlayerList().forEach(player -> {
+                    GameLogic.getPlayerList().forEach(player -> {
                         suggestionBuilder.suggest(player.getName());
                     });
                 });
@@ -48,7 +48,7 @@ public enum AbilityMeta {
                     return new CommandResult(false, "存在しないプレイヤーです");
                 }
 
-                Actor targetActor = GameManager.getActor(target.getUniqueId());
+                Actor targetActor = GameLogic.getActor(target.getUniqueId());
 
                 if (targetActor == null) {
                     return new CommandResult(false, "対象はゲームに参加していません");
@@ -71,7 +71,7 @@ public enum AbilityMeta {
             "sp",
             usageBuilder -> {
                 usageBuilder.textArgument("target", suggestionBuilder -> {
-                    GameManager.getPlayerList().forEach(player -> {
+                    GameLogic.getPlayerList().forEach(player -> {
                         suggestionBuilder.suggest(player.getName());
                     });
                 });
@@ -83,7 +83,7 @@ public enum AbilityMeta {
                     return new CommandResult(false, "存在しないプレイヤーです");
                 }
 
-                Actor targetActor = GameManager.getActor(target.getUniqueId());
+                Actor targetActor = GameLogic.getActor(target.getUniqueId());
 
                 if (targetActor == null) {
                     return new CommandResult(false, "対象はゲームに参加していません");

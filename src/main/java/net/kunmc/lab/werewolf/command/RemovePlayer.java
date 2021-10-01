@@ -2,7 +2,7 @@ package net.kunmc.lab.werewolf.command;
 
 import dev.kotx.flylib.command.Command;
 import dev.kotx.flylib.command.CommandContext;
-import net.kunmc.lab.werewolf.logic.GameManager;
+import net.kunmc.lab.werewolf.logic.GameLogic;
 import org.bukkit.entity.Player;
 
 import java.util.List;
@@ -22,7 +22,7 @@ class RemovePlayer extends Command {
             int count = 0;
             for (Object arg : ((List) ctx.getTypedArgs().get(0))) {
                 if (arg instanceof Player) {
-                    if (GameManager.removePlayer((Player) arg)) {
+                    if (GameLogic.removePlayer((Player) arg)) {
                         count++;
                     }
                 }

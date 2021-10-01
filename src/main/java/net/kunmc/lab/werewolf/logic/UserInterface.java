@@ -8,7 +8,7 @@ public class UserInterface extends BukkitRunnable {
 
     @Override
     public void run() {
-        if (!GameManager.isIsRunning()) {
+        if (!GameLogic.isIsRunning()) {
             return;
         }
 
@@ -16,6 +16,6 @@ public class UserInterface extends BukkitRunnable {
             return;
         }
 
-        GameManager.actorList.showActionBar();
+        GameLogic.actorList.showActionBar();
     }
 }

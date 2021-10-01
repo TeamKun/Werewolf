@@ -2,7 +2,7 @@ package net.kunmc.lab.werewolf.command;
 
 import dev.kotx.flylib.command.Command;
 import dev.kotx.flylib.command.CommandContext;
-import net.kunmc.lab.werewolf.logic.GameManager;
+import net.kunmc.lab.werewolf.logic.GameLogic;
 import org.jetbrains.annotations.NotNull;
 
 class Stop extends Command {
@@ -12,7 +12,7 @@ class Stop extends Command {
 
     @Override
     public void execute(@NotNull CommandContext ctx) {
-        if (!GameManager.stop()) {
+        if (!GameLogic.stop()) {
             ctx.fail("ゲーム実行中ではありません");
             return;
         }

@@ -5,7 +5,7 @@ import net.kunmc.lab.werewolf.player.RoleMeta;
 
 public class AbilityArgument<T> {
     private final AbilityMeta meta;
-    private T value;
+    private final T value;
 
     public AbilityArgument(AbilityMeta meta, T arg) {
         this.meta = meta;

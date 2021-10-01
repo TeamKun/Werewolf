@@ -12,15 +12,15 @@ public class Listener implements org.bukkit.event.Listener {
      */
     @EventHandler(ignoreCancelled = true)
     public void onPlayerDeath(PlayerDeathEvent event) {
-        if (!GameManager.isIsRunning()) {
+        if (!GameLogic.isIsRunning()) {
             return;
         }
 
         // プレイヤーの死亡処理
         UUID uuid = event.getEntity().getUniqueId();
-        GameManager.deathActor(uuid);
+        GameLogic.deathActor(uuid);
         // 勝敗判定
-        TeamMeta winnerTeam = GameManager.winnerTeam();
+        TeamMeta winnerTeam = GameLogic.winnerTeam();
         // 勝者なし
         if (winnerTeam == null) {
             return;
@@ -28,6 +28,6 @@ public class Listener implements org.bukkit.event.Listener {
 
         // 勝者あり
         // ゲーム終了
-        GameManager.end(winnerTeam);
+        GameLogic.end(winnerTeam);
     }
 }
