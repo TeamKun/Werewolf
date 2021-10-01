@@ -2,7 +2,7 @@ package net.kunmc.lab.werewolf.command.config.set;
 
 import dev.kotx.flylib.command.Command;
 import net.kunmc.lab.werewolf.command.CommandNameConst;
-import net.kunmc.lab.werewolf.meta.ConfigMeta;
+import net.kunmc.lab.werewolf.config.ConfigMeta;
 
 class Others extends Command {
     public Others() {

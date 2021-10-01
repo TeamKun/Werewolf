@@ -2,7 +2,7 @@ package net.kunmc.lab.werewolf.command;
 
 import dev.kotx.flylib.command.Command;
 import dev.kotx.flylib.command.CommandContext;
-import net.kunmc.lab.werewolf.game.GameManager;
+import net.kunmc.lab.werewolf.logic.GameManager;
 import org.bukkit.entity.Player;
 
 import java.util.List;

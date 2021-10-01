@@ -1,9 +1,7 @@
-package net.kunmc.lab.werewolf.actor;
+package net.kunmc.lab.werewolf.player;
 
 import net.kunmc.lab.werewolf.config.ConfigManager;
 import net.kunmc.lab.werewolf.config.RoleConfig;
-import net.kunmc.lab.werewolf.meta.RoleMeta;
-import net.kunmc.lab.werewolf.meta.TeamMeta;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;

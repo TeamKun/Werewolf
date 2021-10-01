@@ -1,4 +1,4 @@
-package net.kunmc.lab.werewolf.game;
+package net.kunmc.lab.werewolf.logic;
 
 public class DirectionLogic {
     /**

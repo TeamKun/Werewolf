@@ -1,6 +1,6 @@
-package net.kunmc.lab.werewolf.game;
+package net.kunmc.lab.werewolf.logic;
 
-import net.kunmc.lab.werewolf.meta.TeamMeta;
+import net.kunmc.lab.werewolf.player.TeamMeta;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.PlayerDeathEvent;
 

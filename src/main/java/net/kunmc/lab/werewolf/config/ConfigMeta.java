@@ -1,4 +1,4 @@
-package net.kunmc.lab.werewolf.meta;
+package net.kunmc.lab.werewolf.config;
 
 public enum ConfigMeta {
 

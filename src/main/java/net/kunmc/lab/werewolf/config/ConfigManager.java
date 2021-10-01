@@ -1,8 +1,7 @@
 package net.kunmc.lab.werewolf.config;
 
 import net.kunmc.lab.werewolf.Werewolf;
-import net.kunmc.lab.werewolf.meta.ConfigMeta;
-import net.kunmc.lab.werewolf.meta.RoleMeta;
+import net.kunmc.lab.werewolf.player.RoleMeta;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import java.util.ArrayList;

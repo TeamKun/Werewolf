@@ -1,7 +1,7 @@
-package net.kunmc.lab.werewolf.game;
+package net.kunmc.lab.werewolf.logic;
 
 import net.kunmc.lab.werewolf.config.ConfigManager;
-import net.kunmc.lab.werewolf.meta.ConfigMeta;
+import net.kunmc.lab.werewolf.config.ConfigMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class UserInterface extends BukkitRunnable {

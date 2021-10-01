@@ -1,11 +1,10 @@
-package net.kunmc.lab.werewolf.meta;
+package net.kunmc.lab.werewolf.player;
 
 import dev.kotx.flylib.command.UsageBuilder;
 import dev.kotx.flylib.command.arguments.TextArgument;
-import net.kunmc.lab.werewolf.actor.Actor;
 import net.kunmc.lab.werewolf.command.AbilityArgument;
 import net.kunmc.lab.werewolf.command.CommandResult;
-import net.kunmc.lab.werewolf.game.GameManager;
+import net.kunmc.lab.werewolf.logic.GameManager;
 import net.kunmc.lab.werewolf.util.DecorationConst;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

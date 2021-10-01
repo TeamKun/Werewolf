@@ -2,9 +2,9 @@ package net.kunmc.lab.werewolf.command;
 
 import dev.kotx.flylib.command.Command;
 import dev.kotx.flylib.command.CommandContext;
-import net.kunmc.lab.werewolf.game.GameManager;
-import net.kunmc.lab.werewolf.meta.AbilityMeta;
-import net.kunmc.lab.werewolf.meta.RoleMeta;
+import net.kunmc.lab.werewolf.logic.GameManager;
+import net.kunmc.lab.werewolf.player.AbilityMeta;
+import net.kunmc.lab.werewolf.player.RoleMeta;
 
 class AbilityCommand extends Command {
     private AbilityMeta abilityMeta;

@@ -1,7 +1,7 @@
 package net.kunmc.lab.werewolf.command;
 
-import net.kunmc.lab.werewolf.meta.AbilityMeta;
-import net.kunmc.lab.werewolf.meta.RoleMeta;
+import net.kunmc.lab.werewolf.player.AbilityMeta;
+import net.kunmc.lab.werewolf.player.RoleMeta;
 
 public class AbilityArgument<T> {
     private final AbilityMeta meta;

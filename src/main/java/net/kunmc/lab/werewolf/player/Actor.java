@@ -1,8 +1,7 @@
-package net.kunmc.lab.werewolf.actor;
+package net.kunmc.lab.werewolf.player;
 
 import net.kunmc.lab.werewolf.command.AbilityArgument;
 import net.kunmc.lab.werewolf.command.CommandResult;
-import net.kunmc.lab.werewolf.meta.TeamMeta;
 import org.bukkit.entity.Player;
 
 import java.util.UUID;

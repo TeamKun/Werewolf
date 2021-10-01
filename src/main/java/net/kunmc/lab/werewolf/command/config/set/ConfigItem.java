@@ -3,7 +3,7 @@ package net.kunmc.lab.werewolf.command.config.set;
 import dev.kotx.flylib.command.Command;
 import kotlin.Unit;
 import net.kunmc.lab.werewolf.config.ConfigManager;
-import net.kunmc.lab.werewolf.meta.ConfigMeta;
+import net.kunmc.lab.werewolf.config.ConfigMeta;
 
 class ConfigItem extends Command {
     public ConfigItem(ConfigMeta config) {
