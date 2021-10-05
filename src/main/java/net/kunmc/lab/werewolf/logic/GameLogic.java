@@ -54,7 +54,7 @@ public class GameLogic implements Listener {
     /**
      * ゲームが実行中か
      */
-    public static boolean isIsRunning() {
+    public static boolean isRunning() {
         return isRunning;
     }
 

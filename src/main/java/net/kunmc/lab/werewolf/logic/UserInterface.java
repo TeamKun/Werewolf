@@ -8,7 +8,7 @@ public class UserInterface extends BukkitRunnable {
 
     @Override
     public void run() {
-        if (!GameLogic.isIsRunning()) {
+        if (!GameLogic.isRunning()) {
             return;
         }
 

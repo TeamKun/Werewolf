@@ -12,7 +12,7 @@ public class Listener implements org.bukkit.event.Listener {
      */
     @EventHandler(ignoreCancelled = true)
     public void onPlayerDeath(PlayerDeathEvent event) {
-        if (!GameLogic.isIsRunning()) {
+        if (!GameLogic.isRunning()) {
             return;
         }
 
