@@ -52,23 +52,50 @@ public class ActorList {
     }
 
     /**
-     * 配役する
-     */
-    public boolean setActors() {
-
-        // 参加者をアドベンチャーモードに変更
+     * 参観者にゲーム開始時の処理を行う.
+     * */
+    public void setup() {
         for (UUID uuid : playerSet) {
             Player player = Bukkit.getPlayer(uuid);
 
-            if (player != null) {
-                player.setGameMode(GameMode.ADVENTURE);
+            if (player == null) {
+                continue;
             }
+
+            // ゲームモードをアドベンチャーに
+            player.setGameMode(GameMode.ADVENTURE);
+            // アイテムをクリア
+            player.getInventory().clear();
+            // 回復
+            player.setHealth(20);
+            // 満腹にする
+            player.setFoodLevel(20);
         }
+    }
 
-        // TODO 基本アイテムの付与
-        // TODO 特殊アイテムの付与
+    /**
+     * 満腹度を回復する
+     * */
+    public void satisfy() {
+        for (UUID uuid : playerSet) {
+            Player player = Bukkit.getPlayer(uuid);
 
-        // 配役処理
+            if (player == null) {
+                continue;
+            }
+
+            player.setFoodLevel(20);
+        }
+    }
+
+    /**
+     *
+     * */
+
+    /**
+     * 配役する
+     */
+    public boolean setActors() {
         List<RoleConfig> configList = ConfigManager.roleConfigList();
         // 配役をクリア
         actors.clear();

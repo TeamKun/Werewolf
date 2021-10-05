@@ -25,9 +25,17 @@ public class GameLogic implements Listener {
      * ゲーム開始
      */
     public static boolean start() {
+        // 配役処理
         if (!actorList.setActors()) {
             return false;
         }
+
+        // プレイヤーに対する処理
+        actorList.setup();
+        // TODO コマンド実行
+        // TODO 基本アイテムの付与
+        // TODO 特殊アイテムの付与
+
         isRunning = true;
         return true;
     }
