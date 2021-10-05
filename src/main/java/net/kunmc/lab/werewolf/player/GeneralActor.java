@@ -23,11 +23,11 @@ public class GeneralActor extends BaseActor {
     }
 
     @Override
-    public CommandResult useAbility(AbilityArgument arg, Function<AbilityArgument, CommandResult> action) {
+    public CommandResult useAbility(AbilityArgument arg, AbilityAction action) {
         if (!this.roleMeta.equals(arg.roleMeta())) {
             return new CommandResult(false, "あなたはこの能力を使用できません");
         }
 
-        return action.apply(arg);
+        return action.use(this, new AbilityArgument[]{arg});
     }
 }

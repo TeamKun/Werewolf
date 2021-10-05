@@ -28,5 +28,5 @@ public interface Actor {
 
     Player player();
 
-    CommandResult useAbility(AbilityArgument arg, Function<AbilityArgument, CommandResult> action);
+    CommandResult useAbility(AbilityArgument arg, AbilityAction action);
 }

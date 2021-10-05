@@ -20,11 +20,11 @@ public enum AbilityMeta {
                 usageBuilder.textArgument("message", TextArgument.Type.PHRASE);
             },
             String.class,
-            arg -> {
+            (user, args)-> {
                 // 人狼チャット
                 List<Actor> werewolfList = GameLogic.getWerewolfList();
 
-                String message = DecorationConst.ITALIC+ "<人狼チャット : " + "this.actorName()" + "> " + arg.value();
+                String message = DecorationConst.ITALIC+ "<人狼チャット : " + user.player().getName() + "> " + args[0].value();
 
                 werewolfList.forEach(actor -> {
                     Bukkit.getPlayer(actor.uuid()).sendMessage(message);
@@ -42,8 +42,8 @@ public enum AbilityMeta {
                 });
             },
             Player.class,
-            arg -> {
-                Player target = (Player) arg.value();
+            (user, args) -> {
+                Player target = (Player) args[0].value();
                 if (target == null) {
                     return new CommandResult(false, "存在しないプレイヤーです");
                 }
@@ -77,8 +77,8 @@ public enum AbilityMeta {
                 });
             },
             Player.class,
-            arg -> {
-                Player target = (Player) arg.value();
+            (user, args) -> {
+                Player target = (Player) args[0].value();
                 if (target == null) {
                     return new CommandResult(false, "存在しないプレイヤーです");
                 }
@@ -107,13 +107,13 @@ public enum AbilityMeta {
     public String commandName;
     private Consumer<UsageBuilder> usage;
     public Class argType;
-    public Function<AbilityArgument, CommandResult> action;
+    public AbilityAction action;
 
     AbilityMeta(RoleMeta roleMeta,
                 String commandName,
                 Consumer<UsageBuilder> usage,
                 Class argType,
-                Function<AbilityArgument, CommandResult> action) {
+                AbilityAction action) {
         this.roleMeta = roleMeta;
         this.commandName = commandName;
         this.usage = usage;

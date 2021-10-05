@@ -25,7 +25,7 @@ public class SpecialActor extends BaseActor {
         player.sendActionBar(Component.text(message));
     }
 
-    public CommandResult useAbility(AbilityArgument arg, Function<AbilityArgument, CommandResult> action) {
+    public CommandResult useAbility(AbilityArgument arg, AbilityAction action) {
         if (!this.roleMeta.equals(arg.roleMeta())) {
             return new CommandResult(false, "あなたはこの能力を使用できません");
         }
@@ -34,7 +34,7 @@ public class SpecialActor extends BaseActor {
             return new CommandResult(false, "能力の使用回数が残っていません");
         }
 
-        CommandResult result = action.apply(arg);
+        CommandResult result = action.use(this, new AbilityArgument[]{arg});
         if(result.isSuccess()) {
             int currentPoint = this.skillPoint.useSkill();
             this.player().sendMessage("能力使用回数: あと" + currentPoint + "回");

@@ -1,5 +1,6 @@
 package net.kunmc.lab.werewolf.logic;
 
+import net.kunmc.lab.werewolf.player.AbilityAction;
 import net.kunmc.lab.werewolf.player.Actor;
 import net.kunmc.lab.werewolf.player.ActorList;
 import net.kunmc.lab.werewolf.command.AbilityArgument;
@@ -91,7 +92,7 @@ public class GameLogic implements Listener {
      */
     public static CommandResult useAbilities(CommandSender sender,
                                              AbilityArgument arg,
-                                             Function<AbilityArgument, CommandResult> action) {
+                                             AbilityAction action) {
 
         if (!isRunning) {
             return new CommandResult(false, "このコマンドは人狼ゲーム進行中のみ使用できます");
