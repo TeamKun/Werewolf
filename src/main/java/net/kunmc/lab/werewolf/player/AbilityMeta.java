@@ -58,11 +58,11 @@ public enum AbilityMeta {
 
                 // 能力を使用する
                 if (targetActor.isDead()) {
-                    resultMessage += targetActor.actorName() + "はすでに死亡しています\n";
+                    resultMessage += targetActor.actorName() + "はすでに死亡しています";
                 } else if (targetActor.isInhuman()) {
-                    resultMessage += targetActor.actorName() + "は人間ではありません\n";
+                    resultMessage += targetActor.actorName() + "は人間ではありません";
                 } else {
-                    resultMessage += targetActor.actorName() + "は人間です\n";
+                    resultMessage += targetActor.actorName() + "は人間です";
                 }
 
                 return new CommandResult(true, resultMessage);
@@ -93,11 +93,11 @@ public enum AbilityMeta {
 
                 // 能力を使用する
                 if (!targetActor.isDead()) {
-                    resultMessage += targetActor.actorName() + "は生存しています\n";
+                    resultMessage += targetActor.actorName() + "は生存しています";
                 } else if (targetActor.isInhuman()) {
-                    resultMessage += targetActor.actorName() + "は人間ではありません\n";
+                    resultMessage += targetActor.actorName() + "は人間ではありません";
                 } else {
-                    resultMessage += targetActor.actorName() + "は人間です\n";
+                    resultMessage += targetActor.actorName() + "は人間です";
                 }
 
                 return new CommandResult(true, resultMessage);
