@@ -54,6 +54,10 @@ public enum AbilityMeta {
                     return new CommandResult(false, "対象はゲームに参加していません");
                 }
 
+                if (targetActor.player().getUniqueId().equals(user.uuid())) {
+                    return new CommandResult(false, "自分自身を対象にできません");
+                }
+
                 String resultMessage = "";
 
                 // 能力を使用する
@@ -87,6 +91,10 @@ public enum AbilityMeta {
 
                 if (targetActor == null) {
                     return new CommandResult(false, "対象はゲームに参加していません");
+                }
+
+                if (targetActor.player().getUniqueId().equals(user.uuid())) {
+                    return new CommandResult(false, "自分自身を対象にできません");
                 }
 
                 String resultMessage = "";
