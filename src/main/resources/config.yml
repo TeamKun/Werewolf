@@ -18,3 +18,23 @@ abilitiesMedium: 1
 
 # アクションバーの表示/非表示
 showActionbar: true
+
+###########
+# コマンド #
+##########
+
+# 開始コマンド
+startupCommands:
+  - gamerule commandblockoutput false # コマンドログ停止
+  - kill @e[type=item] # 落ちているアイテムの消去
+  - gamerule naturalregeneration false # 自然回復無効
+  - gamerule doDaylightCycle false # 時間経過停止
+  - gamerule doWeatherCycle false # 天候固定
+  - gamerule falldamage false # 落下ダメージ無効
+  - gamerule showdeathmessages false # キルログ停止
+
+# 基本アイテム
+basicItems:
+
+# 特殊アイテム
+specialItems:
