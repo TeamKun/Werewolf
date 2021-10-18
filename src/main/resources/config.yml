@@ -25,16 +25,19 @@ showActionbar: true
 
 # 開始コマンド
 startupCommands:
-  - gamerule commandblockoutput false # コマンドログ停止
+  - gamerule sendCommandFeedback false # コマンドログ停止
+  - gamerule commandBlockOutput false # コマンドログ停止
   - kill @e[type=item] # 落ちているアイテムの消去
-  - gamerule naturalregeneration false # 自然回復無効
+  - gamerule naturalRegeneration false # 自然回復無効
   - gamerule doDaylightCycle false # 時間経過停止
   - gamerule doWeatherCycle false # 天候固定
-  - gamerule falldamage false # 落下ダメージ無効
-  - gamerule showdeathmessages false # キルログ停止
+  - gamerule fallDamage false # 落下ダメージ無効
+  - gamerule showDeathMessages false # キルログ停止
 
 # 基本アイテム
 basicItems:
+  - minecraft:bow{Unbreakable:1,Enchantments:[{id:power,lvl:5},{id:infinity,lvl:1}]}
+  - minecraft:arrow
 
 # 特殊アイテム
 specialItems:

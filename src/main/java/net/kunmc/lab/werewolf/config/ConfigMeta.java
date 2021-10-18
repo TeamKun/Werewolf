@@ -1,8 +1,12 @@
 package net.kunmc.lab.werewolf.config;
 
+import java.util.List;
+
 public enum ConfigMeta {
 
-    IS_SHOW_ACTIONBAR("アクションバーの表示", "showActionbar", Boolean.class);
+    IS_SHOW_ACTIONBAR("アクションバーの表示", "showActionbar", Boolean.class),
+    STARTUP_COMMANDS("開始コマンド", "startupCommands",List.class),
+    BASIC_ITEMS("基本アイテム","basicItems", List.class);
 
     public String jName;
     public String path;

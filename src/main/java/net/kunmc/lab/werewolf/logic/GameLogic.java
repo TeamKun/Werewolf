@@ -33,6 +33,7 @@ public class GameLogic implements Listener {
         // プレイヤーに対する処理
         actorList.setup();
         // TODO コマンド実行
+        CommandExecutor.executeStartupCommands();
         // TODO 基本アイテムの付与
         // TODO 特殊アイテムの付与
 
