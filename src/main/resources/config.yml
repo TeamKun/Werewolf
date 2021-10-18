@@ -33,10 +33,11 @@ startupCommands:
   - gamerule doWeatherCycle false # 天候固定
   - gamerule fallDamage false # 落下ダメージ無効
   - gamerule showDeathMessages false # キルログ停止
+  - gamerule keepInventory true # キープインベントリ
 
 # 基本アイテム
 basicItems:
-  - minecraft:bow{Unbreakable:1,Enchantments:[{id:power,lvl:5},{id:infinity,lvl:1}]}
+  - minecraft:bow{Unbreakable:1,Enchantments:[{id:power,lvl:10000},{id:infinity,lvl:1}]}
   - minecraft:arrow
 
 # 特殊アイテム

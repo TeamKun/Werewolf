@@ -35,6 +35,7 @@ public class GameLogic implements Listener {
         // TODO コマンド実行
         CommandExecutor.executeStartupCommands();
         // TODO 基本アイテムの付与
+        CommandExecutor.giveBasicItem(actorList);
         // TODO 特殊アイテムの付与
 
         isRunning = true;
