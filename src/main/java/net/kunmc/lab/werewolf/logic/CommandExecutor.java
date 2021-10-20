@@ -2,9 +2,7 @@ package net.kunmc.lab.werewolf.logic;
 
 import net.kunmc.lab.werewolf.config.ConfigManager;
 import net.kunmc.lab.werewolf.config.ConfigMeta;
-import net.kunmc.lab.werewolf.player.Actor;
 import net.kunmc.lab.werewolf.player.ActorList;
-import net.kunmc.lab.werewolf.util.MessageUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
@@ -12,7 +10,6 @@ import java.util.List;
 
 public class CommandExecutor {
     private static void execute(String command) {
-        MessageUtil.broadcast(command);
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(),command);
     }
 

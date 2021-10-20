@@ -3,6 +3,7 @@ package net.kunmc.lab.werewolf.logic;
 import net.kunmc.lab.werewolf.player.TeamMeta;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.player.PlayerInteractEntityEvent;
 
 import java.util.UUID;
 
@@ -29,5 +30,6 @@ public class Listener implements org.bukkit.event.Listener {
         // 勝者あり
         // ゲーム終了
         GameLogic.end(winnerTeam);
+
     }
 }

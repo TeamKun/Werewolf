@@ -4,9 +4,9 @@
 
 # 人数
 peopleWerewolf: 2
-peopleSeer: 1
-peopleMedium: 1
-peopleMadman: 1
+peopleSeer: 0
+peopleMedium: 0
+peopleMadman: 0
 
 # 能力使用回数
 abilitiesSeer: 1
@@ -25,9 +25,9 @@ showActionbar: true
 
 # 開始コマンド
 startupCommands:
+  - kill @e[type=item] # 落ちているアイテムの消去
   - gamerule sendCommandFeedback false # コマンドログ停止
   - gamerule commandBlockOutput false # コマンドログ停止
-  - kill @e[type=item] # 落ちているアイテムの消去
   - gamerule naturalRegeneration false # 自然回復無効
   - gamerule doDaylightCycle false # 時間経過停止
   - gamerule doWeatherCycle false # 天候固定
@@ -35,10 +35,23 @@ startupCommands:
   - gamerule showDeathMessages false # キルログ停止
   - gamerule keepInventory true # キープインベントリ
 
+
 # 基本アイテム
+# 注：使わない場合は削除ではなくコメントアウトすること
 basicItems:
   - minecraft:bow{Unbreakable:1,Enchantments:[{id:power,lvl:10000},{id:infinity,lvl:1}]}
   - minecraft:arrow
 
 # 特殊アイテム
+# 注：使わない場合は削除ではなくコメントアウトすること
 specialItems:
+  - minecraft:totem_of_undying # 不死のトーテム
+  - minecraft:splash_potion{display:{Name:"\"即死ポーション\"",Lore:["\"あたると即死するポーション。自滅注意。\""]},CustomPotionEffects:[{Id:7,Amplifier:9999,Duration:200}]} # 即死ポーション
+  - minecraft:potion{display:{Name:"\"透明化ポーション\"",Lore:["\"5秒間、透明化と移動速度上昇。\""]},CustomPotionEffects:[{Id:1,Amplifier:2,Duration:100},{Id:14,Amplifier:0,Duration:100}],CustomPotionColor:16777215} # 透明化ポーション
+  - minecraft:shield # 盾
+  - minecraft:golden_axe{display:{Name:"\"一撃のオノ\"",Lore:["\"一撃で殺せるオノ。使用は一度だけ。\""]},Damage:99,Enchantments:[{id:sharpness,lvl:1000}]} # 一撃のオノ
+  - minecraft:stick{display:{Name:"\"吹き飛ばし棒\"",Lore:["\"殴った相手を遠くへ吹き飛ばす。\""]},Enchantments:[{id:knockback,lvl:5}]} # 吹き飛ばし棒
+  - minecraft:firework_star{display:{Name:"\"煙玉\"",Lore:["\"自分以外のプレイヤーを数秒間、盲目にする。\""]}} # 煙玉
+  - minecraft:potion{display:{Name:"\"無敵ポーション\"",Lore:["\"5秒間ダメージを受けない。\""]},CustomPotionColor:33023} # 無敵ポーション
+  - minecraft:potion{display:{Name:"\"透視ポーション\"",Lore:["\"20秒間自分以外のプレイヤーの位置を表示する。\""]},CustomPotionColor:16776960} # 透視ポーション
+  - minecraft:nether_star{display:{Name:"\"シャッフルストーン\"",Lore:["\"自分以外のプレイヤーの位置をシャッフルする。\""]}} # シャッフルストーン
