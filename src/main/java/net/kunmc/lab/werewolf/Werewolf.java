@@ -1,5 +1,6 @@
 package net.kunmc.lab.werewolf;
 
+import dev.kotx.flylib.FlyLib;
 import net.kunmc.lab.werewolf.command.CommandBuilder;
 import net.kunmc.lab.werewolf.config.ConfigManager;
 import net.kunmc.lab.werewolf.logic.Listener;
