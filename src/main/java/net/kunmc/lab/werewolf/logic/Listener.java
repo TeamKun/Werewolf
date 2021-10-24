@@ -14,6 +14,7 @@ import org.bukkit.event.entity.ArrowBodyCountChangeEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.EquipmentSlot;
 
 import java.awt.*;
 import java.util.UUID;
@@ -48,6 +49,13 @@ public class Listener implements org.bukkit.event.Listener {
      * */
     @EventHandler()
     public void onPlayerInteract(PlayerInteractEvent event) {
+        if (!GameLogic.isRunning()) {
+            return;
+        }
+
+        if (!(event.getAction().equals(Action.RIGHT_CLICK_AIR) || event.getAction().equals(Action.RIGHT_CLICK_BLOCK)) ) {
+            return;
+        }
         String itemDisplayName = ((TextComponent) event.getItem().getItemMeta().displayName()).content();
         Items.use(itemDisplayName, event.getPlayer());
     }

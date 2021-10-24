@@ -39,6 +39,20 @@ public class ActorList {
     }
 
     /**
+     * 指定したプレイヤー以外のプレイヤーリストを習得する
+     * */
+    public List<Player> getPlayerList(UUID ignorePLayer) {
+        List<Player> result = new ArrayList<>();
+        actors.forEach(actor -> {
+            if (!actor.uuid().equals(ignorePLayer)) {
+                result.add(Bukkit.getPlayer(actor.uuid()));
+            }
+
+        });
+        return result;
+    }
+
+    /**
      * プレイヤーが死亡したときの処理
      */
     public boolean death(UUID uuid) {

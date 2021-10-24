@@ -18,7 +18,7 @@ import java.util.UUID;
 import java.util.function.Function;
 
 public class GameLogic implements Listener {
-    static ActorList actorList = new ActorList();
+    public static ActorList actorList = new ActorList();
     private static boolean isRunning = false;
 
     /**

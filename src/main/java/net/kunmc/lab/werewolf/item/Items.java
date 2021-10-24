@@ -3,8 +3,8 @@ package net.kunmc.lab.werewolf.item;
 import org.bukkit.entity.Player;
 
 public enum Items {
-    INVISIBLE_PORTION("透視ポーション", new InvisiblePortion()),
-    INVINCIBLE_PORTION("無敵ポーション", new InvinciblePortion()),
+    INVISIBLE_POTION("透視ポーション", new InvisiblePotion()),
+    INVINCIBLE_POTION("無敵ポーション", new InvinciblePotion()),
     SMOKE_BALL("煙玉", new SmokeBall()),
     SHUFFLE_STAR("シャッフルスター", new ShuffleStar());
 
