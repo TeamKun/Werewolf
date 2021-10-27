@@ -31,11 +31,12 @@ public class GameLogic implements Listener {
 
         // プレイヤーに対する処理
         actorList.setup();
-        // TODO コマンド実行
+        // スタートアップコマンド実行
         CommandExecutor.executeStartupCommands();
-        // TODO 基本アイテムの付与
+        // 基本アイテムの付与
         CommandExecutor.giveBasicItem(actorList);
-        // TODO 特殊アイテムの付与
+        // 特殊アイテムの付与
+        CommandExecutor.giveSpecialItem(actorList);
 
         isRunning = true;
         return true;
@@ -45,8 +46,8 @@ public class GameLogic implements Listener {
      * ゲーム終了
      */
     public static void end(TeamMeta winnerTeam) {
-
         MessageUtil.broadcast(DecorationConst.GREEN + winnerTeam.jName + "の勝利！");
+        actorList.gameSet();
         isRunning = false;
     }
 
@@ -58,6 +59,7 @@ public class GameLogic implements Listener {
             return false;
         }
 
+        actorList.gameSet();
         isRunning = false;
         return true;
     }

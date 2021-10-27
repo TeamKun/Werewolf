@@ -41,8 +41,6 @@ startupCommands:
 basicItems:
   - minecraft:bow{Unbreakable:1,Enchantments:[{id:power,lvl:10000},{id:infinity,lvl:1}]}
   - minecraft:arrow
-  - minecraft:firework_star{display:{Name:"\"煙玉\"",Lore:["\"自分以外のプレイヤーを数秒間、盲目にする。\""]}} # 煙玉
-  - minecraft:potion{display:{Name:"\"無敵ポーション\"",Lore:["\"5秒間ダメージを受けない。\""]},CustomPotionColor:33023} # 無敵ポーション
 
 # 特殊アイテム
 # 注：使わない場合は削除ではなくコメントアウトすること
