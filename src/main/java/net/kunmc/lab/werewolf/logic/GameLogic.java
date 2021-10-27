@@ -15,7 +15,6 @@ import org.bukkit.event.Listener;
 
 import java.util.List;
 import java.util.UUID;
-import java.util.function.Function;
 
 public class GameLogic implements Listener {
     public static ActorList actorList = new ActorList();
@@ -46,6 +45,7 @@ public class GameLogic implements Listener {
      * ゲーム終了
      */
     public static void end(TeamMeta winnerTeam) {
+
         MessageUtil.broadcast(DecorationConst.GREEN + winnerTeam.jName + "の勝利！");
         isRunning = false;
     }

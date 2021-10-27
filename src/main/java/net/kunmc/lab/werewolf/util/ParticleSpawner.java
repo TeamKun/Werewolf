@@ -9,11 +9,11 @@ import org.bukkit.scheduler.BukkitRunnable;
 public class ParticleSpawner extends BukkitRunnable {
     private int startTick;
     private Particle particle;
-    private int duration;
+    private Second duration;
     private Player target;
     private int count;
 
-    public ParticleSpawner(Particle particle, int duration, Player target, int count) {
+    public ParticleSpawner(Particle particle, Second duration, Player target, int count) {
         this.particle = particle;
         this.duration = duration;
         this.target = target;
@@ -24,7 +24,7 @@ public class ParticleSpawner extends BukkitRunnable {
     @Override
     public void run() {
         int elapsedTick = Bukkit.getCurrentTick() - this.startTick;
-        if (elapsedTick > duration) {
+        if (elapsedTick > this.duration.tick()) {
             this.cancel();
         }
         this.target.spawnParticle(this.particle, this.target.getLocation(), this.count);

@@ -41,6 +41,8 @@ startupCommands:
 basicItems:
   - minecraft:bow{Unbreakable:1,Enchantments:[{id:power,lvl:10000},{id:infinity,lvl:1}]}
   - minecraft:arrow
+  - minecraft:firework_star{display:{Name:"\"煙玉\"",Lore:["\"自分以外のプレイヤーを数秒間、盲目にする。\""]}} # 煙玉
+  - minecraft:potion{display:{Name:"\"無敵ポーション\"",Lore:["\"5秒間ダメージを受けない。\""]},CustomPotionColor:33023} # 無敵ポーション
 
 # 特殊アイテム
 # 注：使わない場合は削除ではなくコメントアウトすること
@@ -52,6 +54,6 @@ specialItems:
   - minecraft:golden_axe{display:{Name:"\"一撃のオノ\"",Lore:["\"一撃で殺せるオノ。使用は一度だけ。\""]},Damage:99,Enchantments:[{id:sharpness,lvl:1000}]} # 一撃のオノ
   - minecraft:stick{display:{Name:"\"吹き飛ばし棒\"",Lore:["\"殴った相手を遠くへ吹き飛ばす。\""]},Enchantments:[{id:knockback,lvl:5}]} # 吹き飛ばし棒
   - minecraft:firework_star{display:{Name:"\"煙玉\"",Lore:["\"自分以外のプレイヤーを数秒間、盲目にする。\""]}} # 煙玉
-  - minecraft:potion{display:{Name:"\"無敵ポーション\"",Lore:["\"5秒間ダメージを受けない。\""]},CustomPotionColor:33023} # 無敵ポーション
+  - minecraft:potion{display:{Name:"\"無敵ポーション\"",Lore:["\"5秒間ダメージを受けない。\""]},CustomPotionColor:2289725} # 無敵ポーション
   - minecraft:potion{display:{Name:"\"透視ポーション\"",Lore:["\"20秒間自分以外のプレイヤーの位置を表示する。\""]},CustomPotionColor:16776960} # 透視ポーション
-  - minecraft:nether_star{display:{Name:"\"シャッフルストーン\"",Lore:["\"自分以外のプレイヤーの位置をシャッフルする。\""]}} # シャッフルストーン
+  - minecraft:nether_star{display:{Name:"\"シャッフルスター\"",Lore:["\"自分以外のプレイヤーの位置をシャッフルする。\""]}} # シャッフルストーン

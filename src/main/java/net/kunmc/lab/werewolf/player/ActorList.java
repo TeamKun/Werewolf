@@ -78,8 +78,31 @@ public class ActorList {
 
             // ゲームモードをアドベンチャーに
             player.setGameMode(GameMode.ADVENTURE);
+
             // アイテムをクリア
             player.getInventory().clear();
+
+            // 回復
+            player.setHealth(20);
+            // 満腹にする
+            player.setFoodLevel(20);
+        }
+    }
+
+    /**
+     * ゲーム終了処理
+     * */
+    public void gameSet() {
+        for (UUID uuid : playerSet) {
+            Player player = Bukkit.getPlayer(uuid);
+
+            if (player == null) {
+                continue;
+            }
+
+            // アイテムをクリア
+            player.getInventory().clear();
+
             // 回復
             player.setHealth(20);
             // 満腹にする
