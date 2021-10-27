@@ -11,7 +11,6 @@ public class ParticleSpawner extends BukkitRunnable {
     private Particle particle;
     private int duration;
     private Player target;
-    private Location location;
     private int count;
 
     public ParticleSpawner(Particle particle, int duration, Player target, int count) {
