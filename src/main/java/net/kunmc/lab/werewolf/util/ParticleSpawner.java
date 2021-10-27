@@ -26,6 +26,7 @@ public class ParticleSpawner extends BukkitRunnable {
         int elapsedTick = Bukkit.getCurrentTick() - this.startTick;
         if (elapsedTick > this.duration.tick()) {
             this.cancel();
+            return;
         }
         this.target.spawnParticle(this.particle, this.target.getLocation(), this.count);
     }
