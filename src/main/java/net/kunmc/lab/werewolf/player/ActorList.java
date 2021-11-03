@@ -114,11 +114,6 @@ public class ActorList {
             // アイテムをクリア
             player.getInventory().clear();
 
-            // 回復
-            player.setHealth(20);
-            // 満腹にする
-            player.setFoodLevel(20);
-
             // 名前表記を戻す
             player.playerListName(player.displayName());
         }

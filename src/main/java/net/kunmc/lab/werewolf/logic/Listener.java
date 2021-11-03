@@ -4,6 +4,7 @@ import net.kunmc.lab.werewolf.item.ItemType;
 import net.kunmc.lab.werewolf.item.Items;
 import net.kunmc.lab.werewolf.player.TeamMeta;
 import net.kyori.adventure.text.TextComponent;
+import org.bukkit.GameMode;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.PlayerDeathEvent;
@@ -28,6 +29,7 @@ public class Listener implements org.bukkit.event.Listener {
         // プレイヤーの死亡処理
         UUID uuid = event.getEntity().getUniqueId();
         GameLogic.deathActor(uuid);
+        event.getEntity().setGameMode(GameMode.SPECTATOR);
         // 勝敗判定
         TeamMeta winnerTeam = GameLogic.winnerTeam();
         // 勝者なし
