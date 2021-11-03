@@ -48,7 +48,7 @@ public class GameLogic implements Listener {
      * ゲーム終了
      */
     public static void end(TeamMeta winnerTeam) {
-        MessageUtil.broadcast(DecorationConst.GREEN + winnerTeam.jName + "の勝利！");
+        DirectionLogic.gameSet(winnerTeam);
         actorList.gameSet();
         isRunning = false;
     }

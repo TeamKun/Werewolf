@@ -1,9 +1,7 @@
 package net.kunmc.lab.werewolf.player;
 
-import net.kunmc.lab.werewolf.Werewolf;
 import net.kunmc.lab.werewolf.config.ConfigManager;
 import net.kunmc.lab.werewolf.config.RoleConfig;
-import net.kunmc.lab.werewolf.util.DecorationConst;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
@@ -244,5 +242,9 @@ public class ActorList {
         });
 
         return result;
+    }
+
+    public Set<Actor> getActorList() {
+        return actors;
     }
 }
