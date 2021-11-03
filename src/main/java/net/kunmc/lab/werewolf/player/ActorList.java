@@ -3,6 +3,7 @@ package net.kunmc.lab.werewolf.player;
 import net.kunmc.lab.werewolf.Werewolf;
 import net.kunmc.lab.werewolf.config.ConfigManager;
 import net.kunmc.lab.werewolf.config.RoleConfig;
+import net.kunmc.lab.werewolf.util.DecorationConst;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
@@ -89,8 +90,8 @@ public class ActorList {
             // 満腹にする
             player.setFoodLevel(20);
 
-            // TODO プレイヤーリストから非表示
-            player.displayName(Component.text("dwa"));
+            // プレイヤーリストから非表示
+            player.playerListName(Component.text(""));
         }
     }
 
@@ -112,6 +113,9 @@ public class ActorList {
             player.setHealth(20);
             // 満腹にする
             player.setFoodLevel(20);
+
+            // 名前表記を戻す
+            player.playerListName(player.displayName());
         }
     }
 

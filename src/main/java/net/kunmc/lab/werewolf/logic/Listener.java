@@ -79,7 +79,7 @@ public class Listener implements org.bukkit.event.Listener {
         if (textComponent == null) {
             return;
         }
-        
+
         String itemDisplayName = textComponent.content();
 
         Items.use(itemDisplayName, event.getPlayer(), ItemType.PORTION);
