@@ -29,6 +29,8 @@ public class GameLogic implements Listener {
             return false;
         }
 
+        DirectionLogic.gameStart();
+
         // プレイヤーに対する処理
         actorList.setup();
         // スタートアップコマンド実行

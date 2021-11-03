@@ -30,6 +30,13 @@ public class ActorList {
     }
 
     /**
+     * 人数を取得する
+     * */
+    public int size() {
+        return this.actors.size();
+    }
+
+    /**
      * 参加者のリストを取得する
      * */
     public List<Player> getPlayerList() {
@@ -133,10 +140,6 @@ public class ActorList {
             player.setFoodLevel(20);
         }
     }
-
-    /**
-     *
-     * */
 
     /**
      * 配役する
