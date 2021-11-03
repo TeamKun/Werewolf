@@ -8,7 +8,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import java.util.UUID;
-import java.util.function.Function;
 
 public class SpecialActor extends BaseActor {
     private SkillPoint skillPoint;

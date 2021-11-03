@@ -11,7 +11,6 @@ import org.bukkit.entity.Player;
 
 import java.util.List;
 import java.util.function.Consumer;
-import java.util.function.Function;
 
 public enum AbilityMeta {
     WOLF_CHAT(RoleMeta.WEREWOLF,

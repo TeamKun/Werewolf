@@ -1,10 +1,10 @@
 package net.kunmc.lab.werewolf.logic;
 
+import net.kunmc.lab.werewolf.command.AbilityArgument;
+import net.kunmc.lab.werewolf.command.CommandResult;
 import net.kunmc.lab.werewolf.player.AbilityAction;
 import net.kunmc.lab.werewolf.player.Actor;
 import net.kunmc.lab.werewolf.player.ActorList;
-import net.kunmc.lab.werewolf.command.AbilityArgument;
-import net.kunmc.lab.werewolf.command.CommandResult;
 import net.kunmc.lab.werewolf.player.TeamMeta;
 import net.kunmc.lab.werewolf.util.DecorationConst;
 import net.kunmc.lab.werewolf.util.MessageUtil;

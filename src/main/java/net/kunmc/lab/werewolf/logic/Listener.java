@@ -1,27 +1,18 @@
 package net.kunmc.lab.werewolf.logic;
 
-import com.destroystokyo.paper.event.block.BlockDestroyEvent;
 import net.kunmc.lab.werewolf.item.ItemType;
 import net.kunmc.lab.werewolf.item.Items;
-import net.kunmc.lab.werewolf.player.Actor;
 import net.kunmc.lab.werewolf.player.TeamMeta;
-import net.kunmc.lab.werewolf.util.MessageUtil;
-import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
-import net.kyori.adventure.text.TranslatableComponent;
-import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.Action;
-import org.bukkit.event.entity.ArrowBodyCountChangeEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
-import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.inventory.EquipmentSlot;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.material.MaterialData;
 
-import java.awt.*;
 import java.util.UUID;
 
 public class Listener implements org.bukkit.event.Listener {
@@ -66,7 +57,13 @@ public class Listener implements org.bukkit.event.Listener {
             return;
         }
 
-        String itemDisplayName = ((TextComponent) event.getItem().getItemMeta().displayName()).content();
+        TextComponent textComponent = (TextComponent) event.getItem().getItemMeta().displayName();
+
+        if (textComponent == null) {
+            return;
+        }
+        String itemDisplayName = textComponent.content();
+
         if (Items.use(itemDisplayName, event.getPlayer(), ItemType.NORMAL)) {
             event.getItem().add(-1);
         };
@@ -78,7 +75,12 @@ public class Listener implements org.bukkit.event.Listener {
             return;
         }
 
-        String itemDisplayName = ((TextComponent) event.getItem().getItemMeta().displayName()).content();
+        TextComponent textComponent = (TextComponent) event.getItem().getItemMeta().displayName();
+        if (textComponent == null) {
+            return;
+        }
+        
+        String itemDisplayName = textComponent.content();
 
         Items.use(itemDisplayName, event.getPlayer(), ItemType.PORTION);
     }

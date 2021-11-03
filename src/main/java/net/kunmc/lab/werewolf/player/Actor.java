@@ -5,7 +5,6 @@ import net.kunmc.lab.werewolf.command.CommandResult;
 import org.bukkit.entity.Player;
 
 import java.util.UUID;
-import java.util.function.Function;
 
 public interface Actor {
     String roleName();

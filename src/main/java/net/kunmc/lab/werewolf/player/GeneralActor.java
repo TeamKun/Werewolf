@@ -7,7 +7,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import java.util.UUID;
-import java.util.function.Function;
 
 public class GeneralActor extends BaseActor {
     public GeneralActor(UUID uuid, RoleMeta role) {

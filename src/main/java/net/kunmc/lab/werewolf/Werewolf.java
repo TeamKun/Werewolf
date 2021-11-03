@@ -1,10 +1,9 @@
 package net.kunmc.lab.werewolf;
 
-import dev.kotx.flylib.FlyLib;
 import net.kunmc.lab.werewolf.command.CommandBuilder;
 import net.kunmc.lab.werewolf.config.ConfigManager;
-import net.kunmc.lab.werewolf.logic.Listener;
 import net.kunmc.lab.werewolf.logic.GameTask;
+import net.kunmc.lab.werewolf.logic.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Werewolf extends JavaPlugin {
