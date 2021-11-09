@@ -4,9 +4,9 @@
 
 # 人数
 peopleWerewolf: 2
-peopleSeer: 0
-peopleMedium: 0
-peopleMadman: 0
+peopleSeer: 1
+peopleMedium: 1
+peopleMadman: 1
 
 # 能力使用回数
 abilitiesSeer: 1
