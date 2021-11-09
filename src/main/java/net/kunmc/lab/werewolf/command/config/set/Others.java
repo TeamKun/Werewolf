@@ -10,7 +10,9 @@ class Others extends Command {
 
         try {
             for (ConfigMeta othersConfig : ConfigMeta.values()) {
-                children(new ConfigItem(othersConfig));
+                if (othersConfig.isCreateCommand) {
+                    children(new ConfigItem(othersConfig));
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
