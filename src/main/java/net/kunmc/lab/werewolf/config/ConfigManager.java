@@ -1,8 +1,10 @@
 package net.kunmc.lab.werewolf.config;
 
 import net.kunmc.lab.werewolf.Werewolf;
+import net.kunmc.lab.werewolf.logic.GameLogic;
 import net.kunmc.lab.werewolf.player.RoleMeta;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,14 +63,18 @@ public class ConfigManager {
      * config show others に表示する文字列を取得する
      */
     public static StringBuilder showOthersConfig() {
-        List<RoleConfig> list = roleConfigList();
         StringBuilder msg = new StringBuilder();
         msg.append("◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇現在の設定◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇\n");
         for (ConfigMeta value : ConfigMeta.values()) {
-            msg.append(value.jName + " : " + getOthersConfig(value) + "\n");
+            if (value.isCreateCommand) {
+                msg.append(value.jName + " : " + getOthersConfig(value) + "\n");
+            }
         }
-        msg.append("◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇現在の設定◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇\n");
-
+        msg.append("◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇参加者リスト◆◇◆◇◆◇◆◇◆◇◆◇◆◇◆◇\n");
+        List<Player> playerList = GameLogic.actorList.getPlannedPlayerList();
+        for (Player player : playerList) {
+            msg.append(player.getName() + "\n");
+        }
         return msg;
     }
 

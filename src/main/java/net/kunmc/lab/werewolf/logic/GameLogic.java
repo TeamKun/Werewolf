@@ -149,5 +149,4 @@ public class GameLogic implements Listener {
     public static List<Player> getPlayerList() {
         return actorList.getPlayerList();
     }
-
 }

@@ -47,6 +47,18 @@ public class ActorList {
     }
 
     /**
+     * 参加予定者のリストを取得する
+     * */
+    public List<Player> getPlannedPlayerList() {
+        List<Player> result = new ArrayList<>();
+        playerSet.forEach(uuid -> {
+            result.add(Bukkit.getPlayer(uuid));
+        });
+
+        return result;
+    }
+
+    /**
      * 指定したプレイヤー以外のプレイヤーリストを習得する
      * */
     public List<Player> getPlayerList(UUID ignorePLayer, boolean allowDeadPlayer) {
