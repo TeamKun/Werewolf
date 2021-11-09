@@ -17,7 +17,7 @@ public class SmokeBall implements SpecialItem {
     public void use(Player user) {
         Second second = new Second(10);
 
-        this.targetList = GameLogic.actorList.getPlayerList(user.getUniqueId());
+        this.targetList = GameLogic.actorList.getPlayerList(user.getUniqueId(), false);
         targetList.forEach(target -> {
             target.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, second.tick(), 0, true, true));
             new ParticleSpawner(Particle.SMOKE_NORMAL, second, target, 100).runTaskTimerAsynchronously(Werewolf.plugin,0, 5);

@@ -49,11 +49,15 @@ public class ActorList {
     /**
      * 指定したプレイヤー以外のプレイヤーリストを習得する
      * */
-    public List<Player> getPlayerList(UUID ignorePLayer) {
+    public List<Player> getPlayerList(UUID ignorePLayer, boolean allowDeadPlayer) {
         List<Player> result = new ArrayList<>();
         actors.forEach(actor -> {
             if (!actor.uuid().equals(ignorePLayer)) {
-                result.add(Bukkit.getPlayer(actor.uuid()));
+                if (allowDeadPlayer) {
+                    result.add(Bukkit.getPlayer(actor.uuid()));
+                } else if (!actor.isDead()) {
+                    result.add(Bukkit.getPlayer(actor.uuid()));
+                }
             }
 
         });

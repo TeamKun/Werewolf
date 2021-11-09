@@ -40,7 +40,7 @@ public class InvisiblePotion implements SpecialItem {
         @Override
         public void run() {
             int elapsedTick = Bukkit.getCurrentTick() - this.startTick;
-            List<Player> targetList = GameLogic.actorList.getPlayerList(user.getUniqueId());
+            List<Player> targetList = GameLogic.actorList.getPlayerList(user.getUniqueId(), false);
 
             // 時間切れ
             if (elapsedTick > this.duration.tick()) {
