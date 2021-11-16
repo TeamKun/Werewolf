@@ -2,6 +2,7 @@ package net.kunmc.lab.werewolf.player;
 
 import net.kunmc.lab.werewolf.config.ConfigManager;
 import net.kunmc.lab.werewolf.config.RoleConfig;
+import net.kunmc.lab.werewolf.util.DecorationConst;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
@@ -29,14 +30,14 @@ public class ActorList {
 
     /**
      * 人数を取得する
-     * */
+     */
     public int size() {
         return this.actors.size();
     }
 
     /**
      * 参加者のリストを取得する
-     * */
+     */
     public List<Player> getPlayerList() {
         List<Player> result = new ArrayList<>();
         actors.forEach(actor -> {
@@ -48,7 +49,7 @@ public class ActorList {
 
     /**
      * 参加予定者のリストを取得する
-     * */
+     */
     public List<Player> getPlannedPlayerList() {
         List<Player> result = new ArrayList<>();
         playerSet.forEach(uuid -> {
@@ -60,7 +61,7 @@ public class ActorList {
 
     /**
      * 指定したプレイヤー以外のプレイヤーリストを習得する
-     * */
+     */
     public List<Player> getPlayerList(UUID ignorePLayer, boolean allowDeadPlayer) {
         List<Player> result = new ArrayList<>();
         actors.forEach(actor -> {
@@ -91,7 +92,7 @@ public class ActorList {
 
     /**
      * 参観者にゲーム開始時の処理を行う.
-     * */
+     */
     public void setup() {
         for (UUID uuid : playerSet) {
             Player player = Bukkit.getPlayer(uuid);
@@ -118,7 +119,7 @@ public class ActorList {
 
     /**
      * ゲーム終了処理
-     * */
+     */
     public void gameSet() {
         for (UUID uuid : playerSet) {
             Player player = Bukkit.getPlayer(uuid);
@@ -137,7 +138,7 @@ public class ActorList {
 
     /**
      * 満腹度を回復する
-     * */
+     */
     public void satisfy() {
         for (UUID uuid : playerSet) {
             Player player = Bukkit.getPlayer(uuid);
@@ -253,6 +254,13 @@ public class ActorList {
         });
 
         return result;
+    }
+
+    public void sendWerewolfName(Actor actor) {
+        actor.player().sendMessage(DecorationConst.RED + "人狼は");
+        for (Actor wolf : werewolfList()) {
+            actor.player().sendMessage(DecorationConst.RED + wolf.actorName());
+        }
     }
 
     public Set<Actor> getActorList() {

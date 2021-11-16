@@ -25,7 +25,7 @@ public class InvisiblePotion implements SpecialItem {
 
     /**
      * 発酵処理用インナークラス
-     * */
+     */
     private class GlowingTask extends BukkitRunnable {
         private int startTick;
         private Second duration;

@@ -19,11 +19,11 @@ public enum AbilityMeta {
                 usageBuilder.textArgument("message", TextArgument.Type.PHRASE);
             },
             String.class,
-            (user, args)-> {
+            (user, args) -> {
                 // 人狼チャット
                 List<Actor> werewolfList = GameLogic.getWerewolfList();
 
-                String message = DecorationConst.ITALIC+ "<人狼チャット : " + user.player().getName() + "> " + args[0].value();
+                String message = DecorationConst.ITALIC + "<人狼チャット : " + user.player().getName() + "> " + args[0].value();
 
                 werewolfList.forEach(actor -> {
                     Bukkit.getPlayer(actor.uuid()).sendMessage(message);

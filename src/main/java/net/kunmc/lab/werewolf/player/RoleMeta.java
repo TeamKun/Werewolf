@@ -92,7 +92,7 @@ public enum RoleMeta {
 
     public Actor instance(UUID uuid) {
         if (this.isSpecial) {
-            return new SpecialActor(uuid,this);
+            return new SpecialActor(uuid, this);
         }
         return new GeneralActor(uuid, this);
     }

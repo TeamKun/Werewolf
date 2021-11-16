@@ -101,7 +101,7 @@ public class ConfigManager {
 
     /**
      * その他のコンフィグを取得する
-     * */
+     */
     public static Object getOthersConfig(ConfigMeta othersConfig) {
         return config.getObject(othersConfig.path, othersConfig.type);
     }

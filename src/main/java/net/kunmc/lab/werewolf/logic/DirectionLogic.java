@@ -10,14 +10,13 @@ import net.kunmc.lab.werewolf.util.DecorationConst;
 import net.kunmc.lab.werewolf.util.MessageUtil;
 import net.kunmc.lab.werewolf.util.SoundUtil;
 import org.bukkit.Sound;
-import org.bukkit.block.data.type.Switch;
 
 import java.util.List;
 
 public class DirectionLogic {
     /**
      * ゲーム開始演出
-     * */
+     */
     static void gameStart() {
         SoundUtil.playSoundAll(Sound.AMBIENT_CAVE);
         MessageUtil.sendTitleAll(DecorationConst.YELLOW + "マイクラ" + DecorationConst.RED + "人狼" + DecorationConst.RESET + "開始!!", "", 20, 60, 20);
@@ -48,11 +47,11 @@ public class DirectionLogic {
 
     /**
      * ゲーム終了演出
-     * */
+     */
     static void gameSet(TeamMeta winner) {
         Sound sound = Sound.BLOCK_ANVIL_USE;
         String color = "";
-        switch(winner) {
+        switch (winner) {
             case HUMAN:
                 sound = Sound.UI_TOAST_CHALLENGE_COMPLETE;
                 color = DecorationConst.GREEN;

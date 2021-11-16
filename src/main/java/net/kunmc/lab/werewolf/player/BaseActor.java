@@ -5,7 +5,7 @@ import org.bukkit.entity.Player;
 
 import java.util.UUID;
 
-abstract class BaseActor implements Actor{
+abstract class BaseActor implements Actor {
     protected RoleMeta roleMeta;
     protected UUID uuid;
     protected boolean isDead;

@@ -7,7 +7,7 @@ import org.bukkit.Particle;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
-public class InvinciblePotion implements SpecialItem  {
+public class InvinciblePotion implements SpecialItem {
     public void use(Player user) {
         new BukkitRunnable() {
             @Override

@@ -9,6 +9,7 @@ class Role extends Command {
     public Role() {
         super(CommandNameConst.COMMAND_ROLE);
     }
+
     @Override
     public void execute(CommandContext ctx) {
         ctx.success(ConfigManager.showRoleConfig().toString());

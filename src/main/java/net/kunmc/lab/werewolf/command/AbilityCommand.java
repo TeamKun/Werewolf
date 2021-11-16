@@ -9,6 +9,7 @@ import net.kunmc.lab.werewolf.player.RoleMeta;
 class AbilityCommand extends Command {
     private AbilityMeta abilityMeta;
     private RoleMeta roleMeta;
+
     public AbilityCommand(AbilityMeta abilityMeta) {
         super(abilityMeta.commandName);
         this.abilityMeta = abilityMeta;

@@ -42,7 +42,7 @@ public class Listener implements org.bukkit.event.Listener {
 
     /**
      * アイテム使用処理
-     * */
+     */
     @EventHandler()
     public void onPlayerInteract(PlayerInteractEvent event) {
         if (!GameLogic.isRunning()) {
@@ -53,7 +53,7 @@ public class Listener implements org.bukkit.event.Listener {
             return;
         }
 
-        if (!(event.getAction().equals(Action.RIGHT_CLICK_AIR) || event.getAction().equals(Action.RIGHT_CLICK_BLOCK)) ) {
+        if (!(event.getAction().equals(Action.RIGHT_CLICK_AIR) || event.getAction().equals(Action.RIGHT_CLICK_BLOCK))) {
             return;
         }
 
@@ -66,7 +66,8 @@ public class Listener implements org.bukkit.event.Listener {
 
         if (Items.use(itemDisplayName, event.getPlayer(), ItemType.NORMAL)) {
             event.getItem().add(-1);
-        };
+        }
+        ;
     }
 
     @EventHandler(ignoreCancelled = true)

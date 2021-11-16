@@ -38,6 +38,11 @@ public class GameLogic implements Listener {
         // 特殊アイテムの付与
         CommandExecutor.giveSpecialItem(actorList);
 
+        // 人狼に仲間を通知
+        for (Actor actor : actorList.werewolfList()) {
+            actorList.sendWerewolfName(actor);
+        }
+
         isRunning = true;
         return true;
     }
@@ -145,7 +150,7 @@ public class GameLogic implements Listener {
 
     /**
      * 参加者のリストを取得する
-     * */
+     */
     public static List<Player> getPlayerList() {
         return actorList.getPlayerList();
     }

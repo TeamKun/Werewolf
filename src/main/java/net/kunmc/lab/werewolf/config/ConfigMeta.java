@@ -5,9 +5,9 @@ import java.util.List;
 public enum ConfigMeta {
 
     IS_SHOW_ACTIONBAR("アクションバーの表示", "showActionbar", Boolean.class, true),
-    STARTUP_COMMANDS("開始コマンド", "startupCommands",List.class, false),
-    BASIC_ITEMS("基本アイテム","basicItems", List.class, false),
-    SPECIAL_ITEMS("基本アイテム","specialItems", List.class, false);
+    STARTUP_COMMANDS("開始コマンド", "startupCommands", List.class, false),
+    BASIC_ITEMS("基本アイテム", "basicItems", List.class, false),
+    SPECIAL_ITEMS("基本アイテム", "specialItems", List.class, false);
 
     public String jName;
     public String path;

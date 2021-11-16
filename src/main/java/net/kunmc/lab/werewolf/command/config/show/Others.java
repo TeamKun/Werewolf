@@ -9,6 +9,7 @@ class Others extends Command {
     public Others() {
         super(CommandNameConst.COMMAND_OTHERS);
     }
+
     @Override
     public void execute(CommandContext ctx) {
         ctx.success(ConfigManager.showOthersConfig().toString());

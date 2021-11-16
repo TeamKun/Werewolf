@@ -11,14 +11,17 @@ import java.util.List;
 
 public class CommandExecutor {
     private static void execute(String command) {
-        Bukkit.dispatchCommand(Bukkit.getConsoleSender(),command);
+        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
     }
+
     private static void give(Player player, String item) {
         execute("give " + player.getName() + " " + item);
-    };
+    }
+
+    ;
 
     static void executeStartupCommands() {
-        List<String> commands = (List<String>)ConfigManager.getOthersConfig(ConfigMeta.STARTUP_COMMANDS);
+        List<String> commands = (List<String>) ConfigManager.getOthersConfig(ConfigMeta.STARTUP_COMMANDS);
         for (String command : commands) {
             execute(command);
         }
@@ -26,7 +29,7 @@ public class CommandExecutor {
 
     static void giveBasicItem(ActorList actorList) {
         /** アイテムのリスト */
-        List<String> basicItemList = (List<String>)ConfigManager.getOthersConfig(ConfigMeta.BASIC_ITEMS);
+        List<String> basicItemList = (List<String>) ConfigManager.getOthersConfig(ConfigMeta.BASIC_ITEMS);
         for (Player player : actorList.getPlayerList()) {
             for (String basicItem : basicItemList) {
                 give(player, basicItem);
@@ -36,7 +39,7 @@ public class CommandExecutor {
 
     public static void giveSpecialItem(ActorList actorList) {
         /** アイテムのリスト */
-        List<String> specialItemList = (List<String>)ConfigManager.getOthersConfig(ConfigMeta.SPECIAL_ITEMS);
+        List<String> specialItemList = (List<String>) ConfigManager.getOthersConfig(ConfigMeta.SPECIAL_ITEMS);
         // リストをシャッフル
         Collections.shuffle(specialItemList);
 

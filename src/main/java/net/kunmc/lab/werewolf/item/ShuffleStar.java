@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ShuffleStar implements SpecialItem {
     public void use(Player user) {
-        List<Player> targetList = GameLogic.actorList.getPlayerList(user.getUniqueId(),false);
+        List<Player> targetList = GameLogic.actorList.getPlayerList(user.getUniqueId(), false);
         List<Location> locationList = new ArrayList<>();
 
         // ターゲットの座標を取得してシャッフル

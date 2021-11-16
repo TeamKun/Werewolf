@@ -115,5 +115,12 @@
             <version>4.6.0</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>net.minecraft</groupId>
+            <artifactId>v1_16_R3</artifactId>
+            <version>1.16</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/server/cache/patched_1.16.5.jar</systemPath>
+        </dependency>
     </dependencies>
 </project>

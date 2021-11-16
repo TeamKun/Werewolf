@@ -34,7 +34,7 @@ public class SpecialActor extends BaseActor {
         }
 
         CommandResult result = action.use(this, new AbilityArgument[]{arg});
-        if(result.isSuccess()) {
+        if (result.isSuccess()) {
             int currentPoint = this.skillPoint.useSkill();
             this.player().sendMessage("能力使用回数: あと" + currentPoint + "回");
         }
