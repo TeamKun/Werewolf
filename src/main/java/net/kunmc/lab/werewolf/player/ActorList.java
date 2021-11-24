@@ -198,7 +198,7 @@ public class ActorList {
         int humanTeamCount = 0;
         int werewolfTeamCount = 0;
         for (Actor actor : this.actors) {
-            if (actor.team().equals(TeamMeta.HUMAN) && !actor.isDead()) {
+            if (actor.team().equals(TeamMeta.HUMAN) && !actor.isDead() && !actor.isMadman()) {
                 humanTeamCount++;
             }
 

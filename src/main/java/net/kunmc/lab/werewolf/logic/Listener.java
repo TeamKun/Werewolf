@@ -8,8 +8,7 @@ import org.bukkit.GameMode;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.PlayerDeathEvent;
-import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.player.PlayerItemConsumeEvent;
+import org.bukkit.event.player.*;
 import org.bukkit.inventory.EquipmentSlot;
 
 import java.util.UUID;
@@ -30,11 +29,12 @@ public class Listener implements org.bukkit.event.Listener {
         event.getEntity().setGameMode(GameMode.SPECTATOR);
         // 勝敗判定
         TeamMeta winnerTeam = GameLogic.winnerTeam();
+
+        event.setCancelled(true);
         // 勝者なし
         if (winnerTeam == null) {
             return;
         }
-
         // 勝者あり
         // ゲーム終了
         GameLogic.end(winnerTeam);
@@ -86,4 +86,13 @@ public class Listener implements org.bukkit.event.Listener {
         Items.use(itemDisplayName, event.getPlayer(), ItemType.PORTION);
     }
 
+    @EventHandler(ignoreCancelled = true)
+    public void onPlayerJoin(PlayerJoinEvent event) {
+        event.joinMessage(null);
+    }
+
+    @EventHandler(ignoreCancelled = true)
+    public void onPlayerQuit(PlayerQuitEvent event) {
+        event.quitMessage(null);
+    }
 }

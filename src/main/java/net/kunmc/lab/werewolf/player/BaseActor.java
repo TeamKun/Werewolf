@@ -22,6 +22,11 @@ abstract class BaseActor implements Actor {
     }
 
     @Override
+    public boolean isMadman() {
+        return this.roleMeta == RoleMeta.MADMAN;
+    }
+
+    @Override
     public String actorName() {
         return Bukkit.getPlayer(this.uuid).getName();
     }

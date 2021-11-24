@@ -113,7 +113,7 @@ public enum RoleMeta {
 
     public String actionBarMessage() {
         String message = "";
-        if (team.equals(TeamMeta.HUMAN)) {
+        if (team.equals(TeamMeta.HUMAN) && !this.equals(RoleMeta.MADMAN)) {
             message += DecorationConst.GREEN + jName;
         }
 

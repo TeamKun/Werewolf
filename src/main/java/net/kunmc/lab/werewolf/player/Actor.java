@@ -15,6 +15,8 @@ public interface Actor {
 
     boolean isInhuman();
 
+    boolean isMadman();
+
     boolean isWerewolf();
 
     void death();
