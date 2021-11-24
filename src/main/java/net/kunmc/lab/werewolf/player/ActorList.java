@@ -113,7 +113,7 @@ public class ActorList {
             player.setFoodLevel(20);
 
             // プレイヤーリストから非表示
-            player.playerListName(Component.text(""));
+            //player.playerListName(Component.text(""));
         }
     }
 

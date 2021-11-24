@@ -20,6 +20,9 @@ public class SpecialActor extends BaseActor {
     @Override
     public void showActionBar() {
         Player player = Bukkit.getPlayer(this.uuid);
+        if (player == null) {
+            return;
+        }
         String message = this.roleMeta.actionBarMessage() + " - 残り" + this.skillPoint.current() + "回";
         player.sendActionBar(Component.text(message));
     }
