@@ -1,7 +1,9 @@
 package net.kunmc.lab.werewolf.player;
 
 import net.kunmc.lab.werewolf.config.ConfigManager;
+import net.kunmc.lab.werewolf.config.ConfigMeta;
 import net.kunmc.lab.werewolf.config.RoleConfig;
+import net.kunmc.lab.werewolf.logic.GameLogic;
 import net.kunmc.lab.werewolf.util.DecorationConst;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
@@ -101,8 +103,12 @@ public class ActorList {
                 continue;
             }
 
-            // ゲームモードをアドベンチャーに
-            player.setGameMode(GameMode.ADVENTURE);
+            // ゲームモードを変更
+            GameMode gamemode = GameMode.ADVENTURE;
+            if (!(Boolean) ConfigManager.getOthersConfig(ConfigMeta.ADVENTURE_MODE)) {
+                gamemode = GameMode.SURVIVAL;
+            }
+            player.setGameMode(gamemode);
 
             // アイテムをクリア
             player.getInventory().clear();
@@ -111,9 +117,6 @@ public class ActorList {
             player.setHealth(20);
             // 満腹にする
             player.setFoodLevel(20);
-
-            // プレイヤーリストから非表示
-            //player.playerListName(Component.text(""));
         }
     }
 

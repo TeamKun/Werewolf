@@ -18,6 +18,7 @@ abilitiesMedium: 1
 
 # アクションバーの表示/非表示
 showActionbar: true
+adventureMode: true
 
 ###########
 # コマンド #
