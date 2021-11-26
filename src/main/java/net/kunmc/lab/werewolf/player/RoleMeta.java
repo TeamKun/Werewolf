@@ -24,7 +24,7 @@ public enum RoleMeta {
             true,
             false,
             "wc",
-            "/wc <text> - 人狼チャット"),
+            "<text> - 人狼チャット"),
     SEER("預言者",
             TeamMeta.HUMAN,
             0,
@@ -33,8 +33,8 @@ public enum RoleMeta {
             "abilitiesSeer",
             false,
             true,
-            "ft",
-            "/ft <player> - 対象を占う"),
+            "f",
+            "<player> - 対象を占う"),
     MEDIUM("霊媒師",
             TeamMeta.HUMAN,
             0,
@@ -43,8 +43,8 @@ public enum RoleMeta {
             "abilitiesMedium",
             false,
             true,
-            "sp",
-            "/sp <player> - 対象を霊視する"),
+            "s",
+            "<player> - 対象を霊視する"),
     MADMAN("狂人",
             TeamMeta.HUMAN,
             0,
@@ -87,7 +87,7 @@ public enum RoleMeta {
         this.isInhuman = isInhuman;
         this.isSpecial = isSpecial;
         this.abilityCommandName = abilityCommandName;
-        this.abilityDescription = abilityDescription;
+        this.abilityDescription = "/" + abilityCommandName + " " + abilityDescription;
     }
 
     public Actor instance(UUID uuid) {

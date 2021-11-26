@@ -2,18 +2,19 @@ package net.kunmc.lab.werewolf.command;
 
 import dev.kotx.flylib.command.Command;
 import dev.kotx.flylib.command.CommandContext;
+import dev.kotx.flylib.command.Permission;
 import net.kunmc.lab.werewolf.logic.GameLogic;
 import net.kunmc.lab.werewolf.player.AbilityMeta;
 import net.kunmc.lab.werewolf.player.RoleMeta;
+import org.bukkit.Bukkit;
 
 class AbilityCommand extends Command {
     private AbilityMeta abilityMeta;
-    private RoleMeta roleMeta;
 
     public AbilityCommand(AbilityMeta abilityMeta) {
         super(abilityMeta.commandName);
         this.abilityMeta = abilityMeta;
-        this.roleMeta = abilityMeta.roleMeta;
+        this.permission(Permission.getEVERYONE());
 
         usage(abilityMeta::appendUsage);
     }

@@ -14,7 +14,6 @@ import java.util.function.Consumer;
 
 public enum AbilityMeta {
     WOLF_CHAT(RoleMeta.WEREWOLF,
-            "wc",
             usageBuilder -> {
                 usageBuilder.textArgument("message", TextArgument.Type.PHRASE);
             },
@@ -32,7 +31,6 @@ public enum AbilityMeta {
                 return new CommandResult(true, null);
             }),
     FORTUNE(RoleMeta.SEER,
-            "ft",
             usageBuilder -> {
                 usageBuilder.textArgument("target", suggestionBuilder -> {
                     GameLogic.getPlayerList().forEach(player -> {
@@ -71,7 +69,6 @@ public enum AbilityMeta {
                 return new CommandResult(true, resultMessage);
             }),
     SPIRITUAL(RoleMeta.MEDIUM,
-            "sp",
             usageBuilder -> {
                 usageBuilder.textArgument("target", suggestionBuilder -> {
                     GameLogic.getPlayerList().forEach(player -> {
@@ -117,12 +114,11 @@ public enum AbilityMeta {
     public AbilityAction action;
 
     AbilityMeta(RoleMeta roleMeta,
-                String commandName,
                 Consumer<UsageBuilder> usage,
                 Class argType,
                 AbilityAction action) {
         this.roleMeta = roleMeta;
-        this.commandName = commandName;
+        this.commandName = roleMeta.abilityCommandName;
         this.usage = usage;
         this.argType = argType;
         this.action = action;
@@ -130,6 +126,10 @@ public enum AbilityMeta {
 
     public void appendUsage(UsageBuilder usageBuilder) {
         usage.accept(usageBuilder);
+    }
+
+    public String commandName() {
+        return this.commandName;
     }
 
     public AbilityArgument getArgument(Object arg) {
