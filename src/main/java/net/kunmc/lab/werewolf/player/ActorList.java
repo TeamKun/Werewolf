@@ -3,9 +3,7 @@ package net.kunmc.lab.werewolf.player;
 import net.kunmc.lab.werewolf.config.ConfigManager;
 import net.kunmc.lab.werewolf.config.ConfigMeta;
 import net.kunmc.lab.werewolf.config.RoleConfig;
-import net.kunmc.lab.werewolf.logic.GameLogic;
 import net.kunmc.lab.werewolf.util.DecorationConst;
-import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
@@ -51,7 +49,7 @@ public class ActorList {
 
     /**
      * 参加者の中にオフラインのプレイヤーがいるか
-     * */
+     */
     public boolean existLackPlayer() {
         for (UUID uuid : this.playerSet) {
             if (!Bukkit.getOfflinePlayer(uuid).isOnline()) {

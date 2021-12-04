@@ -20,7 +20,7 @@ public class GameLogic implements Listener {
 
     /**
      * 存在チェック
-     * */
+     */
     public static boolean existLackPlayer() {
         return actorList.existLackPlayer();
     }

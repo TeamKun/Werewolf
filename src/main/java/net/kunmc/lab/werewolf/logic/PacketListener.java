@@ -8,15 +8,9 @@ import com.comphenix.protocol.events.PacketEvent;
 import com.mojang.authlib.GameProfile;
 import net.kunmc.lab.werewolf.Werewolf;
 import net.minecraft.server.v1_16_R3.EnumGamemode;
-import net.minecraft.server.v1_16_R3.PacketPlayOutGameStateChange;
 import net.minecraft.server.v1_16_R3.PacketPlayOutPlayerInfo;
-import org.bukkit.Bukkit;
-import org.bukkit.craftbukkit.v1_16_R3.entity.CraftPlayer;
-import org.bukkit.entity.Player;
-import org.bukkit.scheduler.BukkitRunnable;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.UUID;
 
