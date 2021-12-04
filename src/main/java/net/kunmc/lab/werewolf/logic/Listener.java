@@ -10,6 +10,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.*;
 import org.bukkit.inventory.EquipmentSlot;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.UUID;
 
@@ -49,6 +50,14 @@ public class Listener implements org.bukkit.event.Listener {
             return;
         }
 
+        if (event == null) {
+            return;
+        }
+
+        if (event.getHand() == null) {
+            return;
+        }
+
         if (event.getHand().equals(EquipmentSlot.OFF_HAND)) {
             return;
         }
@@ -57,7 +66,12 @@ public class Listener implements org.bukkit.event.Listener {
             return;
         }
 
-        TextComponent textComponent = (TextComponent) event.getItem().getItemMeta().displayName();
+        ItemStack item = event.getItem();
+        if (item == null) {
+            return;
+        }
+
+        TextComponent textComponent = (TextComponent) item.getItemMeta().displayName();
 
         if (textComponent == null) {
             return;
@@ -67,7 +81,6 @@ public class Listener implements org.bukkit.event.Listener {
         if (Items.use(itemDisplayName, event.getPlayer(), ItemType.NORMAL)) {
             event.getItem().add(-1);
         }
-        ;
     }
 
     @EventHandler(ignoreCancelled = true)

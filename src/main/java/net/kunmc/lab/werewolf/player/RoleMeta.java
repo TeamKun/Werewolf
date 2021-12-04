@@ -13,7 +13,7 @@ public enum RoleMeta {
             null,
             false,
             false,
-            null,
+            "",
             "特殊能力なし"),
     WEREWOLF("人狼",
             TeamMeta.WEREWOLF,
@@ -53,7 +53,7 @@ public enum RoleMeta {
             null,
             false,
             false,
-            null,
+            "",
             "特殊能力なし");
 
     public String jName;

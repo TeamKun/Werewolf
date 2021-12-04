@@ -50,6 +50,18 @@ public class ActorList {
     }
 
     /**
+     * 参加者の中にオフラインのプレイヤーがいるか
+     * */
+    public boolean existLackPlayer() {
+        for (UUID uuid : this.playerSet) {
+            if (!Bukkit.getOfflinePlayer(uuid).isOnline()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
      * 参加予定者のリストを取得する
      */
     public List<Player> getPlannedPlayerList() {

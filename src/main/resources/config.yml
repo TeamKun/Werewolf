@@ -35,6 +35,10 @@ startupCommands:
   - gamerule fallDamage false # 落下ダメージ無効
   - gamerule showDeathMessages false # キルログ停止
   - gamerule keepInventory true # キープインベントリ
+  - gamerule announceAdvancements false # 進捗非表示
+  - team join game @a # チームに参加
+  - team modify game nametagVisibility never # ネームタグ消去
+
 
 
 # 基本アイテム

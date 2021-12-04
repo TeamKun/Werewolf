@@ -12,6 +12,11 @@ class Start extends Command {
 
     @Override
     public void execute(@NotNull CommandContext ctx) {
+        if (GameLogic.existLackPlayer()) {
+            ctx.fail("オフラインの参加者がいます");
+            return;
+        }
+
         if (!GameLogic.start()) {
             ctx.fail("プレイヤーの人数が不足しているためゲームを開始できません。役職を減らしてください。");
             return;

@@ -19,6 +19,13 @@ public class GameLogic implements Listener {
     private static boolean isRunning = false;
 
     /**
+     * 存在チェック
+     * */
+    public static boolean existLackPlayer() {
+        return actorList.existLackPlayer();
+    }
+
+    /**
      * ゲーム開始
      */
     public static boolean start() {
